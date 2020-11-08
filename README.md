@@ -8,6 +8,8 @@
 
 
 # week 1 - task 
-added registration,login,logout Page
-added donor-list,search-donor Page
-added my-profile page
+added registration,login,logout Page.
+
+# login to check this pages
+added donor-list,search-donor Page.
+added my-profile page.

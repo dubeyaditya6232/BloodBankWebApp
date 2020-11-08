@@ -204,8 +204,8 @@ if(isset($_POST['register_btn']))
 {
    if($db->query($sql)===TRUE)
      {
-       echo "USER Registered Successfully";
-       echo '<span>proceed to  <span><a href="Login.php">LogIn</a>';
+       echo '<p style="text-align:center;">USER Registered Successfully</p>';
+       echo '<span style="text-align:center;">proceed to  <span><a href="Login.php">LogIn</a>';
       }
     else{
        echo "error: ".$sql."<br>".$db->error;
