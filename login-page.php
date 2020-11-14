@@ -1,7 +1,57 @@
 <?php
 session_start();
+if(!$_SESSION)
+{
+ echo '<script type="text/javascript">alert("You  are not logged IN");
+ window.location.href = "index.php";
+</script>';
+}
 
 include('connect.php');
+if(isset($_POST['request_btn']))
+{
+    $reqbg=$_POST["bgroup"];
+    $username= $_SESSION["username"];
+    $mydate=getdate(date("U"));
+    $cmonth=$mydate['mon'];
+    $cday=$mydate['mday'];
+    $cyear=$mydate['year'];
+    $date=$_POST['date'];
+    $dateElements = explode('-', $_POST['date']);
+    $Emonth=$dateElements[1];
+    $Eday=$dateElements[2];
+    $Eyear=$dateElements[0];
+    //echo $date;
+    if($Eyear>=$cyear)
+    {
+        if($Emonth>=$cmonth)
+        {
+            if($Eday>=$cday)
+            {
+                $sql="UPDATE users SET date='$date',reqbg='$reqbg' WHERE username = '$username' ";
+                if($db->query($sql)===true){
+                  //$Reqmsg="Request updated successfully !";
+              }
+                $query = "UPDATE users SET Request='1' WHERE username = '$username'";
+                if($db->query($query)===true){
+                    $Reqmsg="Request updated successfully !";
+                }
+                else{
+                $Reqmsg="Error updating the Request :".$db->error;
+                }
+            }
+            else{
+                $Reqmsg="Enter Valid Date !!";
+            }
+        }
+        else{
+            $Reqmsg="Enter Valid Date !!";
+        }
+    }
+    else{
+        $Reqmsg="Enter Valid Date !!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +66,7 @@ include('connect.php');
 <style>
 body {
   font-family: "Lato", sans-serif;
+  background-color: #e6ffff;
 }
 
 .sidenav {
@@ -56,24 +107,29 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
+}
 </style>
 </head>
 <body>
   <div class="container-fluid">
   <hgroup>
-    <h1 class="site-title" style="text-align: center; color: red;"><b>BLOOD BANK MANAGEMENT SYSTEM</b></h1><br>
+    <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1><br>
   </hgroup>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-  <a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
   <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>
   <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
   <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>
   <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
 </div>
-<span style="font-size:30px;cursor:pointer;color: #111" onclick="openNav()">&#9776; Menu</span>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
 <script>
 function openNav() {
@@ -92,18 +148,52 @@ function closeNav() {
          unset($_SESSION['message']);
     }
 ?>
-<p style="text-align: center;">This page is not yet ready and will be updated later, you can still use the menu option for navigation.</p>
+<div class="container">
+
+<div class="row">
+    <div class="col-md-8"></div>
+    
+    <div class="col-md-4 " style="border: 4px solid black;">
+      <p><h2 style="color: red;text-align:center;">Make Request</h2></p>
+      <br>
+    <form method="post">
+       <table>
+       <label for="bgroup">Select Blood Group: </label>
+       <select name="bgroup">
+       <option value="O+">O+</option>
+       <option value="O-">O-</option>
+       <option value="AB+">AB+</option>
+       <option value="AB-">AB-</option>
+       <option value="A+">A+</option>
+       <option value="A-">A-</option>
+       <option value="B+">B+</option>
+       <option value="B-">B-</option>
+       </select>
+       <div class="form-group">
+           <br>
+           <label>Enter Date Of Requirement</label>
+       <input type="date" class="form-control" name="date" placeholder="dd/mm/yy" required="required">
+       </div>
+      <input type="submit" name="request_btn" value="Make Request">
+      </table>
+      
+      </form>
+      <br>
+      <?php
+      if(isset($_POST['request_btn']))
+      {
+      echo $Reqmsg;
+      }
+      ?>
+    </div>
+    
+</div>
+
+</div>
+
 </main>
 </div>  
 </body>
 </html> 
 
-<!--<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-  <a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-  <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>
-  <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
-  <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>
-  <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
-</div>-->
+
