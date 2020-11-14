@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!$_SESSION)
+{
+ echo '<script type="text/javascript">alert("You  are not logged IN");
+ window.location.href = "index.php";
+</script>';
+}
 include('connect.php');
 $username= $_SESSION["username"];
 if(isset($_POST['update']))
@@ -94,7 +100,7 @@ table{
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
   <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
   <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
   <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>

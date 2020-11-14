@@ -65,6 +65,11 @@ th ,td{
 body{
   background-color: #e6ffff;
 } 
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
+}
   </style>
 </head>
 <body>

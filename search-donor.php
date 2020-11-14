@@ -3,6 +3,12 @@
 error_reporting(0);
 include('connect.php');
 session_start();
+if(!$_SESSION)
+{
+ echo '<script type="text/javascript">alert("You  are not logged IN");
+ window.location.href = "index.php";
+</script>';
+}
 if($_SESSION['username']===null)
 {
     echo "<html><body><a href='login.php'>Login</a><br></body></html>";
@@ -12,7 +18,7 @@ if($_SESSION['username']===null)
     if(isset($_POST['select_btn']))
     {
     $bgroup=$_POST['bgroup'];// $bgroup stores the blood group which user selects.
-    $sql= "SELECT * FROM users WHERE bgroup='$bgroup'";// bgroup is a coulmn in user table.
+    $sql= "SELECT * FROM users WHERE bgroup='$bgroup' AND usertype= 'donor'";// bgroup is a coulmn in user table.
     $result=$db->query($sql);
     echo '<div class="row">';
     if ($result->num_rows > 0)
@@ -94,8 +100,13 @@ table{
   padding: 1em;
 	background: white;
 	box-shadow: 0 3px 10px blueviolet;
+  margin-bottom:1em;
 }
-
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
+}
 
 </style>
 </head>
@@ -107,7 +118,7 @@ table{
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
   <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
   <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
   <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>

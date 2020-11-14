@@ -3,6 +3,12 @@
 error_reporting(0);
 include('connect.php');
 session_start();
+if(!$_SESSION)
+{
+ echo '<script type="text/javascript">alert("You  are not logged IN");
+ window.location.href = "index.php";
+</script>';
+}
 if($_SESSION['username']===null)
 {
     echo "<html><body><a href='login.php'>Login</a><br></body></html>";
@@ -79,6 +85,11 @@ table{
 body{
   background-color: #e6ffff;
 }
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -89,7 +100,7 @@ body{
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
   <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
   <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>
   <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>

@@ -89,6 +89,11 @@ th ,td{
 }
 body{
   background-color: #e6ffff;
+}
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
 } 
   </style>
 </head>
@@ -96,7 +101,7 @@ body{
 
 <div class="container">
   <hgroup>
-  <h2 class="site-title" style="text-align: center; color: red;">Blood Bank Registration Form</h2><br>
+  <h1 class="site-title" style="text-align: center; color: red;">Blood Bank Registration Form</h1><br>
   </hgroup>
 
 <br>

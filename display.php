@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!$_SESSION)
+{
+ echo '<script type="text/javascript">alert("You  are not logged IN");
+ window.location.href = "index.php";
+</script>';
+}
 include('connect.php');
 //include('donor_list.php');
 $sql="SELECT * FROM users  WHERE usertype= 'donor'";
@@ -82,20 +88,13 @@ table{
   padding: 1em;
 	background: white;
 	box-shadow: 0 3px 10px blueviolet;
+  margin-bottom:1em;
 }
-
-/*[class*="row"] {
-	margin-bottom: 1em;
-  justify-content: center;
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
 }
-
-[class*="col-"] {
-	background: gray;
-	border: 1px blue;
-	padding-top: .75rem;
-	padding-bottom: .75rem;
-	width: 100%;
-}*/
 </style>
 </head>
 
@@ -103,12 +102,13 @@ table{
 <body>
   <div class="container-fluid">
   <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">Every blood donor is a life saver.</h1><br>
+    <h1 class="site-title" style="text-align: center; color: Red;">Every blood donor is a life saver.</h1>
+    <hr>
   </hgroup>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
   <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
   <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>
   <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>
