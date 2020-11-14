@@ -2,6 +2,56 @@
 session_start();
 
 include('connect.php');
+
+//$reqbg=$_POST["bgroup"];
+//$username= $_SESSION["username"];
+$mydate=getdate(date("U"));
+$cmonth=$mydate['mon'];
+$cday=$mydate['mday'];
+$cyear=$mydate['year'];
+$sql2= "SELECT date FROM users WHERE Request='1'";
+$result1=$db->query($sql2);
+if($result1->num_rows>0)
+{
+  while($row1= $result1->fetch_assoc())
+  {
+    //echo $row1["date"];
+    $date1 = date_create();
+    $date1= $row1["date"];
+    $dateElements = explode('-', $date1);
+    $Emonth=$dateElements[1];
+    $Eday=$dateElements[2];
+    $Eyear=$dateElements[0];
+    //echo $Eday;
+    //echo date("Y-m-d",strtotime($date1));
+
+    if($Eyear<=$cyear)
+    {
+        if($Emonth<=$cmonth)
+        {
+            if($Eday<$cday)
+            {
+              $query1 = "UPDATE users
+              SET Request='0',
+                  reqbg='NULL',
+                  date='NULL'
+              WHERE date =' ".$row1["date"]." '";
+              if($db->query($query1)===true)
+              {
+                //echo " Updated Active Users";
+              }
+            }
+        }
+    }
+  }
+}
+
+
+
+
+
+$sql="SELECT * FROM users  WHERE Request='1'";
+$result=$db->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,38 +75,98 @@ include('connect.php');
    text-align:center;
    padding:1em;
 }
-
-  
+body{
+  background-color: #e6ffff;
+}
+.card {
+  padding: 1em;
+	background: white;
+	box-shadow: 0 3px 10px blueviolet;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: .4rem;
+  font-size: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  .sticky{
+    font-size: 10px;
+  }
+}
 </style>
 </head>
 <body>
 
-<div class="container">
-  <hgroup>
-    <h1 class="site-title" style="text-align: center; color: green;">BLOOD BANK MANAGEMENT SYSTEM</h1><br>
-  </hgroup>
 
-<br>
+
+<div class="sticky">Note: Your Request will be removed After the Date of requirement is passed.</div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-  <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav center">
-        <li><a href="index.php">Home</a></li>
-        <!--<li><a href="login.php">LogIN</a></li>
-        <li><a href="register.php">SignUp</a></li>
-        <li><a href="logout.php">LogOut</a></li>-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-      </div>
+        <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
-
-
-<main class="main-content">
+<div class="container-fluid">
+  <hgroup>
+    <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1>
+  </hgroup>
+<hr>
+<main class="main-content container-fluid">
+  <p><h2 class="text-center" style="color: Red;">Active Requests Available</h2></p>
+  
+  <br>
+ <div class="row">
+    <?php
+if ($result->num_rows > 0)
+{
+  while($row = $result->fetch_assoc()) {
+    echo '<div class="col-lg-3 col-sm-3">';
+    echo '<div class="card">';
+    echo '<div class="card-block">';
+      echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
+      echo '<p>City : '.$row["City"].'</p>';
+      echo '<p>Gender : '.$row["Gender"].'</p>';
+      echo '<p>Age : '.$row["Age"].'</p>';
+      echo '<p>Blood Group Required: '.$row["reqbg"].'</p>';
+      echo '<p>Date of Requirement: '.$row["date"].'</p>';
+      echo '<p>Mobile No. : '.$row["mobile"].'</p>';
+      echo '<p>E-mail : '.$row["Email"].'</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    
+  }
+}
+    
+else{
+    echo '<p class="text-center" style="color:Red;text-align:centre;">No User Has Requested for Blood</p>';
+  }
+  ?>
 <?php
     if(isset($_SESSION['message']))
     {
@@ -64,11 +174,14 @@ include('connect.php');
          unset($_SESSION['message']);
     }
 ?>
+</div>
+</main>
+<br>
 <p style="text-align: center;">This page is not yet ready and will be updated later, you can still use the menu option for navigation.</p>
 <p style="text-align: center;">you can register as a new user or login using the details provided to explore site.</p>
 <p style="text-align: center;">Username : adi</p>
 <p style="text-align: center;">Password : 123</p>
-</main>
+<br>
 </div>
 <?php
 include("footer.php");
