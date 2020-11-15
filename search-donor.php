@@ -103,7 +103,7 @@ table{
   margin-bottom:1em;
 }
 @media only screen and (max-width: 600px) {
-  h1{
+  h2{
     font-size: 2rem;
   }
 }
@@ -111,30 +111,33 @@ table{
 </style>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.php">Start</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
+        <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div class="container-fluid">
   <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">You Can Not succeed without Trying</h1><br>
+    <h2 class="site-title" style="text-align: center; color: Red;">You Can Not succeed without Trying</h2><br>
   </hgroup>
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-  <!--<a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
-  <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
-  <a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span> My Profile</a>
-  <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
-</div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
 <main class="main-content">
 
  <div class="col-md-6 col-md-offset-2">
