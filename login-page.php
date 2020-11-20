@@ -15,7 +15,7 @@ if(isset($_POST['del_request_btn']))
   $query = "UPDATE users
   SET Request='0',
       reqbg='NULL',
-      date='NULL'
+      date='0000-00-00'
   WHERE username='$username'";
   if($db->query($query)===true)
   {

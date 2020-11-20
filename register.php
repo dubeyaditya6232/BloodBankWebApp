@@ -3,6 +3,15 @@ session_start();
 include('connect.php');
 //connect to database
 //$db=mysqli_connect("localhost","id15197072_bbms","123456789@aA","id15197072_root1");
+if(  isset($_SESSION['username']) )
+{
+  //header("location:login-page.php");
+  //die();
+ echo '<script type="text/javascript">alert("You  are already Logged IN");
+ window.location.href = "login.php";
+</script>';
+
+}
 
 if(isset($_POST['register_btn']))
 {
@@ -138,10 +147,16 @@ body{
  
 
 <?php
-    if(isset($_SESSION['message']))
-    {
-         echo "<div id='error_msg'>".$_SESSION['message']."</div>";
-         unset($_SESSION['message']);
+if(isset($_POST['register_btn']))
+{
+   if($db->query($sql)===TRUE)
+     {
+       echo '<p style="text-align:center;">USER Registered Successfully</p>';
+       echo '<p style="text-align:center;">proceed to  <a href="login.php">LogIn</a></p>';
+      }
+    else{
+       echo "error: ".$sql."<br>".$db->error;
+      }
     }
 ?>
 <div>
@@ -200,23 +215,10 @@ body{
      </tr>      
     </table>
     <br>
-    <input type="submit" name="register_btn" class="Register ">
+    <input type="submit" name="register_btn" class="btn btn-success ">
 </form>
 </center>
 <div class="text-center">Already have an account? <a href="login.php">Sign In</a></div>
-<?php
-if(isset($_POST['register_btn']))
-{
-   if($db->query($sql)===TRUE)
-     {
-       echo '<p style="text-align:center;">USER Registered Successfully</p>';
-       echo '<span style="text-align:center;">proceed to  <span><a href="login.php">LogIn</a>';
-      }
-    else{
-       echo "error: ".$sql."<br>".$db->error;
-      }
-    }
-?>
 </div>
 
 </main>

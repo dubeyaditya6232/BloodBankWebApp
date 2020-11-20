@@ -34,7 +34,7 @@ if($result1->num_rows>0)
               $query1 = "UPDATE users
               SET Request='0',
                   reqbg='NULL',
-                  date='NULL'
+                  date='0000-00-00'
               WHERE date =' ".$row1["date"]." '";
               if($db->query($query1)===true)
               {

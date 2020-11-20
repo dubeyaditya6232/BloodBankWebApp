@@ -9,12 +9,6 @@ if(!$_SESSION)
  window.location.href = "index.php";
 </script>';
 }
-if($_SESSION['username']===null)
-{
-    echo "<html><body><a href='login.php'>Login</a><br></body></html>";
-    die("You are not logged IN");
-    //header("location:login.php");// redirect to login page
-}
 
 else{
   header("location:display.php");

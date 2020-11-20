@@ -7,7 +7,6 @@ if(!$_SESSION)
 </script>';
 }
 include('connect.php');
-//include('donor_list.php');
 $sql="SELECT * FROM users  WHERE usertype= 'donor'";
 $result=$db->query($sql);
 ?>
