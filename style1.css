@@ -1,0 +1,19 @@
+/* CSS reset*/
+*{
+    margin :0;
+    padding :0;
+}
+/* navigation bar */
+#navbar
+{
+    display: flex;
+    align-items : center;
+}
+/* icon */
+#logo
+{margin: 0px 0px;}
+/* icon image */
+#logo img
+{    height: 50px;
+    margin: 0px 43%;
+    }
