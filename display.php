@@ -123,10 +123,10 @@ table{
   </div>
 </nav>
   <div class="container-fluid">
-  <!-- <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">Every blood donor is a life saver.</h1>
+  <hgroup>
+    <h1 class="site-title" style="text-align: center; color:#B22222 ;"> AVAILABLE DONOR/S</h1>
     <hr>
-  </hgroup> -->
+  </hgroup>
 <main class="main-content container-fluid">
  <div class="row">
     <?php
@@ -163,7 +163,10 @@ else{
 ?>
 </div>
 </main>
-</div>  
+</div>
+<?php
+include("footer1.php");
+?> 
 </body>
 </html>
 

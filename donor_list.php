@@ -126,8 +126,6 @@ body{
 </div>
 </main>
 </div> 
-<?php
-include("footer1.php");
-?>
+
 </body>
 </html> 

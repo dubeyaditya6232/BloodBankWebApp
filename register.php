@@ -99,6 +99,15 @@ th ,td{
 body{
   background-color: #e6ffff;
 }
+.nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
+}
 @media only screen and (max-width: 600px) {
   h1{
     font-size: 2rem;
@@ -115,6 +124,32 @@ body{
 
 <br>
 <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <!--<P class="navbar-brand">Menu</P>-->
+      <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!--<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">About Us</a></li>-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -136,7 +171,7 @@ body{
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 <!-- <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     
