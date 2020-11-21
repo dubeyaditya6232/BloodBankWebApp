@@ -6,17 +6,25 @@
 <style>
 .footer {
    position: fixed;
-   left: 0;
+   left:0;
    bottom: 0;
-   /* width: 100%;
-   background-color: red;
+   width:100%;
+   height:auto;
+   
+
+   /*background-color: red;
    color: white;
    text-align: center; */
+}
+@media only screen and (max-width: 450px) {
+
 }
 </style>
 </head>
 <body>
-  <img src ="img\Untitled-13.jpg" alt ="DONATE YOUR BLOOD FOR A REASON, LET THE REASON BE- A LIFE";>
+<div class=" footer">
+<center><img  class="img-responsive" src ="img\Untitled-4.jpg" alt ="DONATE YOUR BLOOD FOR A REASON, LET THE REASON BE- A LIFE";></center>
+</div>
 
 
 <!-- <div class="footer">
