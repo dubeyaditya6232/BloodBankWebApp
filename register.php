@@ -110,12 +110,14 @@ body{
 
 <div class="container">
   <hgroup>
-  <h1 class="site-title" style="text-align: center; color: red;">Blood Bank Registration Form</h1><br>
+  <!-- <h1 class="site-title" style="text-align: center; color: red;">Blood Bank Registration Form</h1><br> -->
   </hgroup>
 
 <br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
+  <img src="img/Untitled-13.jpg" alt="REGISTRATION FORM" style="width:100%">
+
   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
