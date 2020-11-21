@@ -111,9 +111,9 @@ body{
   </div>
 </nav>
   <div class="container-fluid">
-  <hgroup>
+  <!-- <hgroup>
     <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1><br>
-  </hgroup>
+  </hgroup> -->
 <main class="main-content">
  <div class="col-md-6 col-md-offset-4">
 <?php
