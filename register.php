@@ -116,32 +116,55 @@ body{
 <br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-  <img src= "img\reg.jpg" alt="REGISTRATION FORM" style="width:100% ;    margin: 0.3px 0px">
-
-  <div class="navbar-header">
+    <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <!--<P class="navbar-brand">Menu</P>-->
-      <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+      <a class="navbar-brand" href="index.php">Start</a>
     </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
+        <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <P class="navbar-brand">Menu</P>
+       <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
+     Collect the nav links, forms, and other content for toggling -->
+    <!-- <div class="collapse navbar-collapse" id="myNavbar"> -->
+      <!-- <ul class="nav navbar-nav"> -->
         <!--<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="#">Page 2</a></li>
         <li><a href="#">About Us</a></li>-->
-      </ul>
+      <!-- </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
-</nav>
-
+</nav> -->
+<img src= "img\reg.jpg" alt="REGISTRATION FORM" style="width:100% ;    margin: 0.3px 0px">
+ 
 
 <main class="main-content">
 <p class="text-center">Registering for this site is easy. Just fill the fields below,and well get a new account set up for free and in no time.</p>

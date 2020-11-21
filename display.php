@@ -123,10 +123,10 @@ table{
   </div>
 </nav>
   <div class="container-fluid">
-  <hgroup>
+  <!-- <hgroup>
     <h1 class="site-title" style="text-align: center; color: Red;">Every blood donor is a life saver.</h1>
     <hr>
-  </hgroup>
+  </hgroup> -->
 <main class="main-content container-fluid">
  <div class="row">
     <?php
