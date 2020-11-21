@@ -116,7 +116,7 @@ body{
 <br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-  <img src="img/Untitled-13.jpg" alt="REGISTRATION FORM" style="width:100%">
+  <img src="img\Untitled-13.jpg" alt="REGISTRATION FORM" style="width:100%">
 
   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
