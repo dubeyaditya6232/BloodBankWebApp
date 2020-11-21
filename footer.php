@@ -8,20 +8,20 @@
    position: fixed;
    left: 0;
    bottom: 0;
-   width: 100%;
+   /* width: 100%;
    background-color: red;
    color: white;
-   text-align: center;
+   text-align: center; */
 }
 </style>
 </head>
 <body>
+  <img src ="img\Untitled-13.jpg" alt ="DONATE YOUR BLOOD FOR A REASON, LET THE REASON BE- A LIFE";>
 
-<p></p>
 
-<div class="footer">
+<!-- <div class="footer">
   <p>Anybody can give blood.</p>
-</div>
+</div> -->
 
 </body>
 </html>

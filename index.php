@@ -63,6 +63,7 @@ $result=$db->query($sql);
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href= "style1.css">
   <style>
   #error_msg
 {
@@ -117,6 +118,7 @@ body{
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+    
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -128,6 +130,7 @@ body{
       <ul class="nav navbar-nav">
         <li><a href="about-us.html"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -135,13 +138,16 @@ body{
     </div>
   </div>
 </nav>
+  <div id="logo"> 
+    <img src = "img/logo.jpg" alt = "RAKTIM" >
+</div>
 <div class="container-fluid">
-  <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1>
-  </hgroup>
+  <!-- <hgroup>
+     <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1>
+  </hgroup> -->
 <hr>
 <main class="main-content container-fluid">
-  <p><h2 class="text-center" style="color: Red;">Active Requests Available</h2></p>
+  <p><h1 class="text-center" style="color: #B22222 ;">Active Requests Available</h1></p>
   
   <br>
  <div class="row">
