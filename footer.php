@@ -19,9 +19,7 @@
   <img src ="img\Untitled-4.jpg" alt ="DONATE YOUR BLOOD FOR A REASON, LET THE REASON BE- A LIFE";>
 
 
-<!-- <div class="footer">
-  <p>Anybody can give blood.</p>
-</div> -->
+
 
 </body>
 </html>
