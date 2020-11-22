@@ -14,7 +14,7 @@
 <body>
 <div class="footer1">
     <p></p>
-    <img src ="img\donor list.jpg" alt ="SAFE BLOOD SAVES LIVE" style = "width:100%; height=200px";>
+    <img src ="img\donor list.jpg" alt ="SAFE BLOOD SAVES LIVE" style = "width:100%; height:160px";>
   </div> 
 </body>
 </html>

@@ -124,7 +124,7 @@ table{
 </nav>
   <div class="container-fluid">
   <hgroup>
-    <h1 class="site-title" style="text-align: center; color:#B22222 ;"> AVAILABLE DONOR/S</h1>
+    <h1 class="site-title" style="text-align: center; color: Red;">Every blood donor is a life saver.</h1>
     <hr>
   </hgroup>
 <main class="main-content container-fluid">
@@ -163,10 +163,22 @@ else{
 ?>
 </div>
 </main>
-</div>
+</div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php
 include("footer1.php");
-?> 
+?>
 </body>
 </html>
 
