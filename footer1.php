@@ -8,13 +8,19 @@
    position: fixed;
    left: 0;
    bottom: 0;
+   
 }
+@media only screen and (max-width: 450px) {
+    .footer1{
+      
+      }
+} 
 </style>
 </head>
 <body>
 <div class="footer1">
     <p></p>
-    <img src ="img\donor list.jpg" alt ="SAFE BLOOD SAVES LIVE" style = "width:100%; height:160px";>
+    <img class="img-responsive"src ="img\donor list.jpg" alt ="SAFE BLOOD SAVES LIVE" >
   </div> 
 </body>
 </html>

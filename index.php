@@ -81,6 +81,7 @@ body{
   padding: 1em;
 	background: white;
 	box-shadow: 0 3px 10px blueviolet;
+  margin-bottom:1em;
 }
 .sticky {
   position: -webkit-sticky;
@@ -342,7 +343,8 @@ else{
 </div>-->
 
 
-
+<br>
+<br>
 <?php
 include("footer.php");
 ?>

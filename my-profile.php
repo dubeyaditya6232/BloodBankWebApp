@@ -51,44 +51,8 @@ table{
     width:100%;
     height:max-content;
 }
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+img{
+  width: 25%;
 }
 @media only screen and (max-width: 600px) {
   h2{
@@ -96,6 +60,9 @@ table{
   }
   .a{
     left:0px;
+  }
+  img{
+    width:50%;
   }
 }
 </style>
@@ -126,7 +93,7 @@ table{
 </nav>
   <div class="container-fluid">
   <div>
-  <img src ="img\logo.jpg" alt ="RAKTIM" style = "width: 25%; border: 0; margin: 0px 36%;">
+  <center><img class="img-responsive"src ="img\logo.jpg" alt ="RAKTIM" ></center>
   </div>
   <hgroup>
     <h2 class="site-title" style="text-align:center; color: Red;">Welcome  <?php echo $data['Name']?></h2><hr>
