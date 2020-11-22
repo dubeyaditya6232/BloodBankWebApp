@@ -163,7 +163,22 @@ else{
 ?>
 </div>
 </main>
-</div>  
+</div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php
+include("footer1.php");
+?>
 </body>
 </html>
 

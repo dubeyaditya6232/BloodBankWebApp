@@ -125,6 +125,9 @@ table{
   </div>
 </nav>
   <div class="container-fluid">
+  <div>
+  <img src ="img\logo.jpg" alt ="RAKTIM" style = "width: 25%; border: 0; margin: 0px 36%;">
+  </div>
   <hgroup>
     <h2 class="site-title" style="text-align:center; color: Red;">Welcome  <?php echo $data['Name']?></h2><hr>
   </hgroup>

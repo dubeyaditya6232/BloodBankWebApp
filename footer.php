@@ -22,14 +22,10 @@
 </style>
 </head>
 <body>
+  
 <div class=" footer">
 <center><img  class="img-responsive" src ="img\Untitled-4.jpg" alt ="DONATE YOUR BLOOD FOR A REASON, LET THE REASON BE- A LIFE";></center>
 </div>
-
-
-<!-- <div class="footer">
-  <p>Anybody can give blood.</p>
-</div> -->
 
 </body>
 </html>

@@ -102,6 +102,11 @@ table{
 	box-shadow: 0 3px 10px blueviolet;
   margin-bottom:1em;
 }
+.footer2 {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+}
 @media only screen and (max-width: 600px) {
   h2{
     font-size: 2rem;
@@ -136,7 +141,7 @@ table{
 </nav>
   <div class="container-fluid">
   <hgroup>
-    <h2 class="site-title" style="text-align: center; color: Red;">You Can Not succeed without Trying</h2><br>
+    <!-- <h2 class="site-title" style="text-align: center; color: Red;">You Can Not succeed without Trying</h2><br> -->
   </hgroup>
 <main class="main-content">
 
@@ -185,6 +190,14 @@ if(isset($_POST['select_btn']))
 </div>
 </main>
 </div>
+<br>
+<br>
+<br>
+<br>
+<div class="footer2">
+    <p></p>
+    <img src ="img\searchd.jpg" alt ="DON'T LOSE HOPE" style = "width:100%; height:160px";>
+  </div> 
 
 </body>
 </html>
