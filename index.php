@@ -62,8 +62,6 @@ $result=$db->query($sql);
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href= "style1.css">
   <style>
   #error_msg
 {
@@ -93,7 +91,12 @@ body{
   font-size: 20px;
   text-align: center;
 }
-@media only screen and (max-width: 600px) {
+#logo img
+{    
+    height: 50px;
+    
+}
+@media only screen and (max-width: 450px) {
   h1{
     font-size: 2rem;
   }
@@ -101,8 +104,9 @@ body{
     font-size: 2rem;
   }
   .sticky{
-    font-size: 10px;
+    font-size: 12px;
   }
+  
 }
 .donationTypeInfoWindow {
     background-color: #e6ffff;
@@ -139,7 +143,7 @@ body{
   </div>
 </nav>
   <div id="logo"> 
-    <img src = "img/logo.jpg" alt = "RAKTIM" >
+    <center><img class="img-responsive" src = "img/logo.jpg" alt = "RAKTIM" ></center>
 </div>
 <div class="container-fluid">
   <!-- <hgroup>
@@ -174,7 +178,7 @@ if ($result->num_rows > 0)
 }
     
 else{
-    echo '<p class="text-center" style="color:Red;text-align:centre;">No User Has Requested for Blood</p>';
+    echo '<p> <h2 class="text-center" style="color:Red;text-align:centre;">No User Has Requested for Blood</h2></p>';
   }
   ?>
 <?php
