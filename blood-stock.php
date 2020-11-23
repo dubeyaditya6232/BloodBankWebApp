@@ -134,18 +134,6 @@ if(isset($_GET['search-stock-btn']))
     echo '<p class="text-center">No Blood Stock information Available</p>';
     else
     {
-       /* while($row = $result1->fetch_assoc())
-        {
-        echo '<div >';
-        echo '<p>'.$row['address'].'</p>';
-        echo '</div>';
-        echo '<div>';
-        echo '<p>'.$row['status'].'</p>';
-        echo '</div>';
-        echo '<div>';
-        echo '<p>'.$row['type'].'</p>';
-        echo '</div>';
-        }*/
 echo '<div class="container-fluid">';//container opened
 echo '<div class="row">';//Row opened
 while($row = $result1->fetch_assoc()) {

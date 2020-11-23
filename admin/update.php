@@ -1,7 +1,4 @@
 <?php
-// Turn off all error reporting
-error_reporting(0);
-include('../connect.php');
 session_start();
 if(!$_SESSION)
 {
@@ -9,12 +6,7 @@ if(!$_SESSION)
  window.location.href = "../index.php";
 </script>';
 }
-
-else{
-    $true=1;
-  //header("location:display.php");
-}
-
+include('../connect.php');
 ?>
 
 <!DOCTYPE html>
@@ -35,11 +27,22 @@ body {
   padding: 1em;
 	background: white;
 	box-shadow: 0 3px 10px blueviolet;
-  margin-bottom:1em;
+    margin-bottom:1em;
+}
+.a{
+    width:30em;
+    border:2px solid black;
+    padding:2rem;
 }
 @media only screen and (max-width: 600px) {
   h1{
     font-size: 2rem;
+  }
+  .a{
+    width:25rem;
+  }
+  .card{
+    min-height:fit-content;
   }
 }
 </style>
@@ -57,56 +60,59 @@ body {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="admin.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+        <li><a href="blood-stock.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
         <li><a href="admin.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!--<li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
         <li><a href="../logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
   <div class="container-fluid">
-  <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">REGISTERED USERS</h1><br>
-  </hgroup>
 <main class="main-content">
- <div class="row">
-<?php
-if($true===1)
-{
-    $sql="SELECT * FROM users";
-    $result=$db->query($sql);
-    if ($result->num_rows > 0)
-{
-  while($row = $result->fetch_assoc()) {
-    echo '<div class="col-lg-3 col-sm-3">';
-    echo '<div class="card">';
-    echo '<div class="card-block">';
-      echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
-      echo '<p>City : '.$row["City"].'</p>';
-      echo '<p>Gender : '.$row["Gender"].'</p>';
-      echo '<p>Age : '.$row["Age"].'</p>';
-      echo '<p>Blood Group : '.$row["bgroup"].'</p>';
-      echo '<p>Mobile No. : '.$row["mobile"].'</p>';
-      echo '<p>E-mail : '.$row["Email"].'</p>';
-      echo '<br>';
-      echo '<a href="delete.php?ID='.$row["ID"].'" class="btn btn-danger" role="button">Delete User</a>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    
-  }
-}
-    
-else{
-    echo '<p class="text-center " style="color:red;">No Users have Registered </p>';
-  }
-}
-?>
+ <center>
+ <p><h4>Updation form for blood stock</h4></p>
+ <form METHOD="POST">
+<div class="row a">
+
+    <div class="form-group">
+      <label for="state">State: </label>
+      <input type="text" class="form-control"  placeholder="Enter state" name="state" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="city">City: </label>
+      <input type="text" class="form-control"  placeholder="Enter City" name="city" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="address">Address: </label>
+      <input type="text" class="form-control"  placeholder="Enter Address" name="address" required>
+    </div>
+
+<br>
+    <input type="submit" name="update-stock-btn" class="btn btn-primary" Value="update">
+
 </div>
+</form>
+</center>
+
 </main>
 </div>  
 </body>
 </html> 
+<?php
+  if(isset($_POST['update-stock-btn']))
+  {
+      $state=$_POST['state'];
+      $city=$_POST['city'];
+      $address=$_POST['address'];
+    $sql="UPDATE bloodstock SET State='$state',City='$city',address='$address'  WHERE ID='".$_GET['ID']."'";
+    if($db->query($sql)===true){
+        header("location:blood-stock.php");
+      }
+  }
+?>

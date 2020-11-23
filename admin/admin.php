@@ -92,7 +92,7 @@ body{
      </div>
      <div class="col-md-6">
            <center>
-           <a href="#" class="btn btn-danger" role="button">Link Button</a>
+           <a href="blood-stock.php" class="btn btn-danger" role="button">Blood Stock</a>
           </center>
      </div>
      <br>

@@ -23,4 +23,22 @@ updated index.php with Active Request .
 
 Added About Us page.
 
-## week 3 - will be updated on monday(23/11/2020) 11:00 PM
+## week 3 - task
+
+added blood stock and Admin dashboard.
+
+added logo to the website and handled designing of pages.
+
+partially created Admin page which can be visited using Admin username and Password(which is not provided here pubically for now).
+
+In admin folder added:
+
+1)Admin Dashboard (work on progress).
+
+2) user list page - where Admin can delete a particular user profile.
+
+3)blood stock page - where Admin can add new details about availbility of blood as well as update the previous record.
+
+## week 4 -task
+
+Will be updated the following sunday(29/11/2020).
