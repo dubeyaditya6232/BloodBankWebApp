@@ -34,7 +34,7 @@ if($_SESSION['username']===null)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aditya</title>
+  <title>Search-Donor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,45 +53,6 @@ body {
 table{
     width:100%;
     height:max-content;
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 /*Styling of cards*/
 /*.container-fluid { max-width: 1200px; }*/
@@ -131,6 +92,7 @@ table{
         <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
         <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="blood-stock.php"><span class="glyphicon glyphicon-tint"></span>  Blood Stock  </a></li>
         <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

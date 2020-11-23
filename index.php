@@ -109,10 +109,6 @@ body{
   }
   
 }
-.donationTypeInfoWindow {
-    background-color: #e6ffff;
-    border: 2px solid black
-}
 </style>
 </head>
 <body>
@@ -147,9 +143,6 @@ body{
     <center><img class="img-responsive" src = "img/logo.jpg" alt = "RAKTIM" ></center>
 </div>
 <div class="container-fluid">
-  <!-- <hgroup>
-     <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1>
-  </hgroup> -->
 <hr>
 <main class="main-content container-fluid">
   <p><h1 class="text-center" style="color: #B22222 ;">Active Requests Available</h1></p>
@@ -192,156 +185,6 @@ else{
 </div>
 </main>
 <br>
-<!--<p style="text-align: center;">This page is not yet ready and will be updated later, you can still use the menu option for navigation.</p>
-<p style="text-align: center;">you can register as a new user or login using the details provided to explore site.</p>
-<p style="text-align: center;">Username : adi</p>
-<p style="text-align: center;">Password : 123</p>
-<br>
-</div>-->
-
-
-<!--
-<div class="col-md-8 col-md-offset-2 donationTypeInfoWindow text-center">
-			<header class="typeHeading">
-				<h1>Types of donation</h1>
-			</header>
-			<div class="content">
-                <p style="text-align: center;">The human body contains five liters of blood, which is made of several useful components i.e. <strong>Whole blood</strong>, <strong>Platelet</strong>, and <strong>Plasma</strong>.</p>
-                <p style="text-align: center;">Each type of component has several medical uses and can be used for different medical treatments. your blood donation determines the best donation for you to make.</p>
-                <p style="text-align: center;">For <strong>plasma</strong> and <strong>platelet</strong> donation you must have donated whole blood in past two years.</p>
-                							
-            </div>
-            <br><br>
-
-    <h1 style="color: red;">WHITE BLOOD CELLS</h1>
-		<div class="row">
-		<div class="col-md-4 ">
-		
-			<h3>What is it?</h3>
-			
-			<p>
-			Blood Collected straight from the donor after its donation usually separated into red blood cells, platelets, and plasma.</p>
-			
-			<h3>Who can donate?</h3>
-			
-			<p>You need to be 18-65 years old, weigh 45kg or more and be fit and healthy.</p>
-		
-
-		</div>
-		<div class="col-md-4 infoContent">
-		<h3>User For?</h3>
-			
-			<p>
-			 Stomach disease, kidney disease, childbirth, operations, blood loss, trauma, cancer, blood diseases, haemophilia, anemia, heart disease.</p>
-			
-			<h3>Lasts For?</h3>
-			
-			<p>Red cells can be stored for 42 days.</p>
-		
-		</div>
-		<div class="col-md-4 ">
-		<h3>How long does it take?</h3>
-			
-			<p>
-			15 minutes to donate.</p>
-			
-			<h3>How often can I donate?</h3>
-			
-			<p>Every 12 weeks</p>
-		
-		</div>
-		</div>
-		
-    <h1>PLASMA</h1>
-    <div class="row">
-		<div class="col-md-4 ">
-		
-			<h3>What is it?</h3>
-			
-			<p>
-			The straw-coloured liquid in which red blood cells, white blood cells, and platelets float in.Contains special nutrients which can be used to create 18 different type of medical products to treat many different medical conditions.</p>
-			
-			<h3>Who can donate?</h3>
-			
-			<p>You need to be 18-70 (men) or 20-70 (women) years old, weigh 50kg or more and must have given successful whole blood donation in last two years. </p>
-		
-
-		</div>
-		<div class="col-md-4 infoContent">
-		<h3>User For?</h3>
-			
-			<p>
-			Immune system conditions, pregnancy (including anti-D injections), bleeding, shock, burns, muscle and nerve conditions, haemophilia, immunisations.</p>
-			
-			<h3>Lasts For?</h3>
-			
-			<p>Plasma can last up to one year when frozen.</p>
-		
-		</div>
-		<div class="col-md-4 ">
-		<h3>How  does it work?</h3>
-			
-			<p>
-			We collect your blood, keep plasma and return rest to you by apheresis donation.</p>
-		
-		<h3>How long does it take?</h3>
-			
-			<p>
-			15 minutes to donate.</p>
-			
-			<h3>How often can I donate?</h3>
-			
-			<p>Every 2-3 weeks.</p>
-		
-		</div>
-		</div>
-		<h1>PLATELETS</h1>
-		<div class="row">
-		<div class="col-md-4 ">
-		
-			<h3>What is it?</h3>
-			
-			<p>
-			The tiny 'plates' in blood that wedge together to help to clot and reduce bleeding. Always in high demand, Vital for people with low platelet count, like malaria and cancer patients.</p>
-			
-			<h3>Who can donate?</h3>
-			
-			<p>You need to be 18-70 years old (men), weigh 50kg or more and have given a successful plasma donation in the past 12 months</p>
-		
-
-		</div>
-		<div class="col-md-4 infoContent">
-		<h3>User For?</h3>
-			
-			<p>
-			Cancer, blood diseases, haemophilia, anaemia, heart disease, stomach disease, kidney disease, childbirth, operations, blood loss, trauma, burns.</p>
-			
-			<h3>Lasts For?</h3>
-			
-			<p>Just five days..</p>
-		
-		</div>
-		<div class="col-md-4 ">
-		<h3>How does it work?</h3>
-			
-			<p>
-			We collect your blood, keep platelet and return rest to you by apheresis donation.</p>
-			
-		<h3>How long does it take?</h3>
-			
-			<p>
-			45 minutes to donate.</p>
-			
-			<h3>How often can I donate?</h3>
-			
-			<p>Every 2 weeks</p>
-		
-		</div>
-		</div>
-		<br><br>
-
-</div>-->
-
 
 <br>
 <br>

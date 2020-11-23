@@ -13,7 +13,7 @@ $result=$db->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aditya</title>
+  <title>Donor-list</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,13 +39,6 @@ table, th, td {
 table{
     width:100%;
     height:max-content;
-}
-
-
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 
 /*Styling of cards*/
@@ -82,6 +75,7 @@ table{
         <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
         <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="blood-stock.php"><span class="glyphicon glyphicon-tint"></span>  Blood Stock  </a></li>
         <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

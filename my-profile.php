@@ -31,7 +31,7 @@ if(isset($_POST['update']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aditya</title>
+  <title>My-Profile</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -83,6 +83,7 @@ img{
         <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
         <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="blood-stock.php"><span class="glyphicon glyphicon-tint"></span>  Blood Stock  </a></li>
         <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -99,23 +100,6 @@ img{
     <h2 class="site-title" style="text-align:center; color: Red;">Welcome  <?php echo $data['Name']?></h2><hr>
   </hgroup>
 
-<!--<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-  <a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span> Donor List</a>
-  <a href="search-donor.php"><span class="glyphicon glyphicon-search"></span> Search Donor</a>
-  <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
-</div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-<br>
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>-->
 <main class="main-content  a">
   
  <div class="col-md-6 " style="left:1rem;font-size:2rem">

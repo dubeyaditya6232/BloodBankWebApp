@@ -64,6 +64,7 @@ body{
         <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
         <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
+        <li><a href="blood-stock.php"><span class="glyphicon glyphicon-tint"></span>  Blood Stock  </a></li>
         <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -73,9 +74,6 @@ body{
   </div>
 </nav>
   <div class="container-fluid">
-  <!-- <hgroup>
-    <h1 class="site-title" style="text-align: center; color: Red;">BLOOD BANK MANAGEMENT SYSTEM</h1><br>
-  </hgroup> -->
 <main class="main-content">
  <div class="col-md-6 col-md-offset-4">
 <?php

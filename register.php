@@ -46,17 +46,6 @@ if(isset($_POST['register_btn']))
                 $password=md5($password); //hash password before storing for security purposes
                 $sql="INSERT INTO users(name, city, gender, age, bgroup, username, password , mobile ,Email  ) 
                                  VALUES('$name','$city','$gender','$age','$bloodgrp','$username','$password','$mno','$email')"; 
-                /*if($db->query($sql)===TRUE)
-                {
-                  echo "USER Registered Successfully";
-                }
-                else{
-                  echo "error: ".$sql."<br>".$db->error;
-                }*/
-                /*mysqli_query($db,$sql);  
-                $_SESSION['message']="USER Registered Successfully"; 
-                $_SESSION['username']=$username;
-                header("location:index.php");  //redirect home page*/
             }
             else
             {
@@ -71,7 +60,7 @@ if(isset($_POST['register_btn']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aditya Dubey</title>
+  <title>Register</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -118,9 +107,6 @@ body{
 <body>
 
 <div class="container">
-  <hgroup>
-  <!-- <h1 class="site-title" style="text-align: center; color: red;">Blood Bank Registration Form</h1><br> -->
-  </hgroup>
 
 <br>
 <nav class="navbar navbar-inverse">
@@ -137,9 +123,6 @@ body{
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!--<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">About Us</a></li>-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -148,56 +131,6 @@ body{
     </div>
   </div>
 </nav>
-
-<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.php">Start</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="login-page.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="search-donor.php"><span class="glyphicon glyphicon-search"></span>  Search Donor  </a></li>
-        <li><a href="donor_list.php"><span class="glyphicon glyphicon-list-alt"></span>  Donor List  </a></li>
-        <li><a href="my-profile.php"><span class="glyphicon glyphicon-wrench"></span>  My Profile  </a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <P class="navbar-brand">Menu</P>
-       <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-    </div>
-     Collect the nav links, forms, and other content for toggling -->
-    <!-- <div class="collapse navbar-collapse" id="myNavbar"> -->
-      <!-- <ul class="nav navbar-nav"> -->
-        <!--<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">About Us</a></li>-->
-      <!-- </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
 <img src= "img\reg.jpg" alt="REGISTRATION FORM" style="width:100% ;    margin: 0.3px 0px">
  
 
