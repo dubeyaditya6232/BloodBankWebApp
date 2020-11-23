@@ -126,7 +126,8 @@ body {
       $bgroup=$_POST['bgroup'];
       $sql="INSERT into bloodstock (State,City,bgroup,address) value('$state','$city','$bgroup','$address' )";
       if($db->query($sql)===true){
-        header("location:blood-stock.php");
+        echo '<script>window.location.href = "blood-stock.php";</script>';
+        //header("location:blood-stock.php");
       }
       else{
           echo $db->error;

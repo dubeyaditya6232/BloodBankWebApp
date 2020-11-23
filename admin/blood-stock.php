@@ -107,7 +107,7 @@ if($true===1)
     }
     
 else{
-    echo '<p class="text-center " style="color:red;">No Users have Registered </p>';
+    echo '<p class="text-center " style="color:red;">No information Available for blood Stock</p>';
 }
 }
 ?>

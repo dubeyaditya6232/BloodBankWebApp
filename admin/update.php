@@ -112,7 +112,7 @@ body {
       $address=$_POST['address'];
     $sql="UPDATE bloodstock SET State='$state',City='$city',address='$address'  WHERE ID='".$_GET['ID']."'";
     if($db->query($sql)===true){
-        header("location:blood-stock.php");
+      echo '<script>window.location.href = "blood-stock.php";</script>';
       }
   }
 ?>
