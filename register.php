@@ -24,20 +24,41 @@ if(isset($_POST['register_btn']))
     $mno=$_POST['mno'];
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $password2=$_POST['password2'];  
+    $password2=$_POST['password2'];
+
+    $mobilequery="SELECT * from users WHERE mobile = '$mno'";
+    $mobileresult=$db->query($mobilequery);
+
+    $emailquery="SELECT * from users WHERE Email = '$email'";
+    $emailresult=$db->query($emailquery);
+
     $query = "SELECT * FROM users WHERE username = '$username'";
     $result=mysqli_query($db,$query);
-      if($result)
-      {
-     
-        if( mysqli_num_rows($result) > 0)
+
+/*---------------- email ID already exists ----------------------*/
+
+    if($emailresult->num_rows > 0)
+    {
+      $emailmsg="An Account already exist with the Email Address";
+    }
+/*---------------------------------------------------------------- */
+/*------------------mobile number already exists-------------------*/
+
+    else if($mobileresult->num_rows > 0)
+    {
+      $mobilemsg="An Account already exist with the Mobile Number";
+    }
+/*------------------------------------------------------------------ */ 
+
+/*-------------------- if username already exists -------------------*/
+     else if( mysqli_num_rows($result) > 0)
         {
                 
                 echo '<script language="javascript">';
                 echo 'alert("Username already exists")';
                 echo '</script>';
         }
-        
+/*------------------------------------------------------------------ */ 
           else
           {
             
@@ -52,7 +73,6 @@ if(isset($_POST['register_btn']))
                 $_SESSION['message']="The two password do not match";   
             }
           }
-      }
 }
 ?>
 
@@ -142,6 +162,23 @@ body{
 <?php
 if(isset($_POST['register_btn']))
 {
+  /*-----------------=--- Email Address already Exists----------------------*/
+  if($emailresult->num_rows > 0)
+  {
+    echo '<p class="text-center bg-danger">'.$emailmsg.'</p>';
+  }
+/*--------------------------------------------------------------------------*/
+
+/* --------------------Mobile No. Address already Exists--------------------*/
+  else if($mobileresult->num_rows > 0)
+  {
+    echo '<p class="text-center bg-danger">'.$mobilemsg.'</p>';
+  }
+/* --------------------------------------------------------------------------*/
+
+  /* -----------------Every thing is fine registering user -------------------*/
+  else if( mysqli_num_rows($result) < 1)
+  {
    if($db->query($sql)===TRUE)
      {
        echo '<p style="text-align:center;">USER Registered Successfully</p>';
@@ -151,6 +188,8 @@ if(isset($_POST['register_btn']))
        echo "error: ".$sql."<br>".$db->error;
       }
     }
+  /* -------------------------------------------------------------------------- */
+  }
 ?>
 <div>
 <center>

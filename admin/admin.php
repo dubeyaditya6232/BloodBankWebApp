@@ -74,31 +74,17 @@ body{
           <center>
           <a href="users-list.php"class="btn btn-danger"  role="button">User's List</a>
           </center>
-     </div>
-     <div class="col-md-6">
-        <center>
-        <a href="donor-list.php" class="btn btn-danger" role="button">Donor's List</a>
-        </center>
-     </div>
-     <br>
- </div> 
- <div class="row">
-     <div class="col-md-6 ">
-         <center>
-           <div class="tabs">
-           <a href="request-list.php" class="btn btn-danger" role="button">Request List</a>
-          </div>
-          </center>
-     </div>
-     <div class="col-md-6">
-           <center>
+          <br>
+          <br>
+          <center>
            <a href="blood-stock.php" class="btn btn-danger" role="button">Blood Stock</a>
           </center>
      </div>
-     <br>
- </div>
-  <br>
+     <div class="col-md-6">
 
+     </div>
+     <br>
+ </div> 
 <?php
     if(isset($_SESSION['message']))
     {

@@ -85,6 +85,7 @@ if($true===1)
     echo '<div class="card">';
     echo '<div class="card-block">';
       echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
+      echo '<p>Username : '.$row["username"].'</p>';
       echo '<p>City : '.$row["City"].'</p>';
       echo '<p>Gender : '.$row["Gender"].'</p>';
       echo '<p>Age : '.$row["Age"].'</p>';
