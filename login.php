@@ -91,6 +91,11 @@ if(isset($_POST['Adminlogin_btn']))
 .nav-tabs {
     text-align:center;
 }
+#logo1 img
+{    
+    height: 50px;
+    
+}
 table { 
  border-collapse: collapse; 
   }
@@ -100,6 +105,7 @@ th ,td{
 body{
   background-color: #e6ffff;
 } 
+
 @media only screen and (max-width: 600px) {
   h1{
     font-size: 2rem;
@@ -134,6 +140,9 @@ body{
     </div>
   </div>
 </nav>
+<div id="logo1"> 
+    <center><img src = "img/logo.jpg" alt = "RAKTIM" width = "50%"></center>
+</div>
 
 <main class="main-content" >
 <?php

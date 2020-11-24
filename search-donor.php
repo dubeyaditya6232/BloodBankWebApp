@@ -63,11 +63,7 @@ table{
 	box-shadow: 0 3px 10px blueviolet;
   margin-bottom:1em;
 }
-.footer2 {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-}
+
 @media only screen and (max-width: 600px) {
   h2{
     font-size: 2rem;
@@ -156,11 +152,16 @@ if(isset($_POST['select_btn']))
 <br>
 <br>
 <br>
-<div class="footer2">
-    <p></p>
-    <img src ="img\searchd.jpg" alt ="DON'T LOSE HOPE" style = "width:100%; height:160px";>
-  </div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<?php
+include("footer2.php");
+?>
 </body>
 </html>
 <?php
