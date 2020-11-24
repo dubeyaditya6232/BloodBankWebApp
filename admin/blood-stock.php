@@ -95,6 +95,7 @@ if($true===1)
     echo '<div class="card">';
     echo '<div class="card-block">';
       echo '<h4 class="card-title " style="color:green;">Status : '.$row['status'].'</h4>';
+      echo '<p style="color:black;">Blood Group : '.$row['bgroup'].'</p>';
       echo '<p style="left:0;color:black;">Address :</p>';
       echo '<p>'.$row['address'].'</p>';
       echo '<a style="position:absolute;bottom:2rem;right:2rem;" href="update.php?ID='.$row["ID"].'" class="btn btn-danger" role="button">Update</a>';
