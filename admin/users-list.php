@@ -87,8 +87,8 @@ if($true===1)
       echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
       echo '<p>Username : '.$row["username"].'</p>';
       echo '<p>City : '.$row["City"].'</p>';
-      // echo '<p>Gender : '.$row["Gender"].'</p>';
-      // echo '<p>Age : '.$row["Age"].'</p>';
+       echo '<p>Gender : '.$row["Gender"].'</p>';
+       echo '<p>Age : '.$row["Age"].'</p>';
       echo '<p>Blood Group : '.$row["bgroup"].'</p>';
       echo '<p>Mobile No. : '.$row["mobile"].'</p>';
       echo '<p>E-mail : '.$row["Email"].'</p>';

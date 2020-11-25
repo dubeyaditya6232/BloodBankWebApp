@@ -56,7 +56,7 @@ $result=$db->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aditya</title>
+  <title>BloodBank</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -163,7 +163,7 @@ if ($result->num_rows > 0)
       echo '<p style="color:Red;">Blood Group Required: '.$row["reqbg"].'</p>';
       echo '<p style="color:Red;">Date of Requirement: '.$row["date"].'</p>';
       echo '<p>Mobile No. : '.$row["mobile"].'</p>';
-      echo '<p>E-mail : '.$row["Email"].'</p>';
+      echo '<p><a href="mailto:'.$row["Email"].'">E-mail : '.$row["Email"].'</p>';
     echo '</div>';
     echo '</div>';
     echo '</div>';

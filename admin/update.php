@@ -72,7 +72,7 @@ body {
   <div class="container-fluid">
 <main class="main-content">
  <center>
- <p><h4>Updation form for blood stock</h4></p>
+ <p><h4 style="color:red;">Updation form for blood stock</h4></p>
  <form METHOD="POST">
 <div class="row a">
 

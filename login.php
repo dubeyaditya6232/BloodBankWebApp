@@ -82,11 +82,16 @@ if(isset($_POST['Adminlogin_btn']))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   body{
-  /* background-image: url('abg3.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
+
   background-color:#cceabb;
 } 
+/*.background{
+  background-image: url('img/abg3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width:100%;
+  height:auto;
+}*/
 .nav-tabs > li {
     float:none;
     display:inline-block;
@@ -113,11 +118,14 @@ th ,td{
   h1{
     font-size: 2rem;
   }
+  #logo1 img{
+    width:50%;
+  }
 }
   </style>
 </head>
-<!-- <body style = "background:url(img\abg3.jpg)"> -->
-<body>
+
+<body class=background>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <div class="navbar-header">
@@ -129,12 +137,9 @@ th ,td{
       <!--<P class="navbar-brand">Menu</P>-->
       <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
     </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
+  
   <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!--<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">About Us</a></li>-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -158,13 +163,13 @@ th ,td{
 <center>
   <ul class="nav nav-tabs "  role="tablist" >
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#UserLogin">User Login</a>
+      <a class="nav-link active" data-toggle="tab" href="#UserLogin" style="color:black;">User Login</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#AdminLogin">Admin Login</a>
+      <a class="nav-link" data-toggle="tab" href="#AdminLogin" style="color:black;">Admin Login</a>
     </li>
   </ul>
-  <div class="tab-content">
+  <div class="tab-content" >
      <div id="UserLogin" class="container tab-pane  active" role="tabpanel" aria-labelledby="UserLogin-tab">
         <form method="post" action="login.php">
            <h1>  User Login  </h1>
@@ -179,10 +184,10 @@ th ,td{
                </tr> 
             </table>
                <br>
-               <input type="Submit" name="login_btn" class="btn btn-primary">
+               <input type="Submit" name="login_btn" class="btn btn-success">
         </form>
               <br>
-              <div>Do not have an account? <a type="submit" href="register.php">Sign up</a></div>
+              <div style="font-color:black;">Do not have an account? <a type="submit" class="btn btn-danger" href="register.php">Sign up</a></div>
       </div>
       <div id="AdminLogin" class="container tab-pane fade" role="tabpanel"aria-labelledby="AdminLogin-tab">
             <form method="post" action="login.php">
@@ -198,7 +203,7 @@ th ,td{
                   </tr> 
                    </table>
                    <br>
-                   <input type="Submit" name="Adminlogin_btn" class="btn btn-primary">
+                   <input type="Submit" name="Adminlogin_btn" class="btn btn-success">
             </form>
               <br>
               

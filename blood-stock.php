@@ -131,7 +131,7 @@ body{
 if(isset($_GET['search-stock-btn']))
 {
     if($result1->num_rows <= 0)
-    echo '<p class="text-center">No Blood Stock information Available</p>';
+    echo '<p class="text-center"style="color:red;">No Blood Stock information Available</p>';
     else
     {
 echo '<div class="container-fluid">';//container opened

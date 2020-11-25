@@ -159,8 +159,9 @@ body{
  
 
 <main class="main-content">
+<br>
 <p class="text-center">Registering for this site is easy. Just fill the fields below,and well get a new account set up for free and in no time.</p>
-<br><br>
+<br>
  
 
 <?php
@@ -185,7 +186,7 @@ if(isset($_POST['register_btn']))
   {
    if($db->query($sql)===TRUE)
      {
-       echo '<p style="text-align:center;">USER Registered Successfully</p>';
+       echo '<p style="text-align:center;color:red">USER Registered Successfully</p>';
        echo '<p style="text-align:center;">proceed to  <a href="login.php">LogIn</a></p>';
       }
     else{
@@ -208,14 +209,14 @@ if(isset($_POST['register_btn']))
            <td>City : </td>
            <td><input type="text" name="city" class="textInput" placeholder="Enter City Name" required></td>
      </tr>
-     <!-- <tr>
+      <tr>
            <td>Gender : </td>
            <td><input type="text" name="gender" class="textInput" placeholder="Enter Your Gender" required></td>
-     </tr> -->
-     <!-- <tr>
+     </tr> 
+      <tr>
            <td>Age : </td>
            <td><input type="text" name="age" class="textInput" placeholder="Enter Your Age" required></td>
-     </tr> -->
+     </tr>
      <tr>
      <td><label for="bloodgroup" >Blood Group: </label></td>
      <td><select name="bgroup" required>

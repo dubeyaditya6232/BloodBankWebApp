@@ -65,7 +65,7 @@ table{
 }
 
 @media only screen and (max-width: 600px) {
-  h2{
+  h4{
     font-size: 2rem;
   }
 }
@@ -99,11 +99,12 @@ table{
 </nav>
   <div class="container-fluid">
   <hgroup>
-    <!-- <h2 class="site-title" style="text-align: center; color: Red;">You Can Not succeed without Trying</h2><br> -->
+    <h4 class="site-title text-center" style=" color: Red;">You Can Not succeed without Trying</h4><hr style="border:1px solid black;">
   </hgroup>
 <main class="main-content">
+<br>
 
- <div class="col-md-6 col-md-offset-2">
+ 
 
 <?php
     if(isset($_SESSION['message']))
@@ -114,6 +115,7 @@ table{
 ?>
 
 <center>
+<div >
 <form method="post" action="search-donor.php">
   <table>
   <label for="bgroup">Select Blood Group: </label>
@@ -127,11 +129,13 @@ table{
   <option value="B+">B+</option>
   <option value="B-">B-</option>
 </select> 
-<br>          
-    <input type="submit" name="select_btn">
+<br> 
+<br>
+         
+    <input type="submit" class="btn btn-primary"name="select_btn" value="Search">
     </table>
-
 </form>
+<div>
 </center>
 <br>
 <br>
@@ -145,25 +149,9 @@ if(isset($_POST['select_btn']))
     }
 }
 ?>
-</div>
+
 </main>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<?php
-include("footer2.php");
-?>
-</body>
-</html>
 <?php
  if($true=1)
  {
@@ -173,15 +161,31 @@ include("footer2.php");
     echo '<div class="card-block">';
       echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
       echo '<p>City : '.$row["City"].'</p>';
-      // echo '<p>Gender : '.$row["Gender"].'</p>';
-      // echo '<p>Age : '.$row["Age"].'</p>';
+       echo '<p>Gender : '.$row["Gender"].'</p>';
+       echo '<p>Age : '.$row["Age"].'</p>';
       echo '<p>Blood Group : '.$row["bgroup"].'</p>';
       echo '<p>Mobile No. : '.$row["mobile"].'</p>';
-      echo '<p>E-mail : '.$row["Email"].'</p>';
+      echo '<p><a href="mailto:'.$row["Email"].'">E-mail : '.$row["Email"].'</p>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
   }
  }
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<?php
+include("footer2.php");
+?>
+</body>
+</html>
+
 
