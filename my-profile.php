@@ -11,13 +11,31 @@ $username= $_SESSION["username"];
 if(isset($_POST['update']))
 {
   $usertype=$_POST['usertype'];
+
+  $result=$db->query("SELECT * FROM users WHERE username ='$username'");
+  $row=$result->fetch_array();
+  $currentdate=date("Y/m/d");
+  $currentdate=date_create($currentdate);
+  $fetchdate=$row['lbddate'];
+  $fetchdate=date_create($fetchdate);
+  $diff =date_diff($currentdate,$fetchdate);
+  $diff2=$diff->format("%a");
+  if($diff2>90)
+  {
+  
   $query = "UPDATE users SET usertype='$usertype' WHERE username = '$username'";
   if($db->query($query)===true){
-  $msg="Record updated successfully !";
+  $msg="User Type updated successfully !";
   }
   else{
     $msg="Error updating the Record :".$db->error;
   }
+  }
+  else
+  {
+    $msg = "You cannot donate blood twice within 90 days";
+  }
+  
 }
     $qry = mysqli_query($db,"select * from users where username='$username'");// select query
     $data = mysqli_fetch_array($qry); // fetch data
@@ -25,6 +43,46 @@ if(isset($_POST['update']))
     {
          echo "<div id='error_msg'>".$_SESSION['message']."</div>";
          unset($_SESSION['message']);
+    }
+    if(isset($_POST['last-bd-update-btn']))
+    {
+      $mydate=getdate(date("U"));
+      $cmonth=$mydate['mon'];
+      $cday=$mydate['mday'];
+      $cyear=$mydate['year'];
+      $date=$_POST['lastbddate'];
+      $dateElements = explode('-', $_POST['lastbddate']);
+      $Emonth=$dateElements[1];
+      $Eday=$dateElements[2];
+      $Eyear=$dateElements[0];
+      if($Eyear<=$cyear && $Emonth<$cmonth)
+    {
+      $val="true";
+    }
+    else if($Eyear<=$cyear && $Emonth==$cmonth && $Eday<=$cday)
+    {
+      $val="true";
+    }
+    else
+    {
+      $val="false";
+    }
+    
+    if($val=="true")
+    {
+       $sql="UPDATE users SET lbddate='$date', usertype='Recipient' WHERE username = '$username' ";
+         if($db->query($sql)===true){
+            $msg= "Date updated successfully !";
+          }
+          else{
+              $msg ="Error updating the Request :".$db->error;
+              }
+    }
+    else
+    {
+      $msg= "Enter Valid Date !!";
+    }
+    echo "<script>alert( '$msg')</script>";
     }
 ?>
 
@@ -119,6 +177,7 @@ img{
   <p>Blood Group : <?php echo $data['bgroup']?></p>
   <p>User Type : <?php echo $data['usertype']?></p>
   <p>UserName : <?php echo $data['username']?></p>
+  <p>Last Blood Donated : <?php echo $data['lbddate']?></p>
   <p>Mobile No : <?php echo $data['mobile']?></p>
   <p>E-mail : <?php echo $data['Email']?></p>
   <br>
@@ -141,27 +200,39 @@ img{
   </div>
   <input type="submit" name="update" class="btn btn-primary" value="Update">
 </form>
-<br>
+
+<hr style="border:1px solid black;">
+<form METHOD="POST" action="my-profile.php">
+<div class="form-group" style="width:30rem;">
+<label>Enter your last date of blood Donation :</label>
+<input type="date" class="form-control"  placeholder="" name="lastbddate" required>
+</div>
+<input type="submit" name="last-bd-update-btn" class="btn btn-primary" Value="Set Date">
+<p style="font-size:1rem;">If changes does not reflect then Please Refresh the page.</p>
+</form>
+
+<hr style="border:1px solid black;">
 <p>Do you wish to delete your Account?</p>
 <form METHOD="POST">
 <input type="submit" name="delete-btn" class="btn btn-primary" Value="Delete Account">
 </form>
-<br>
-<br>
+<hr style="border:1px solid black;">
+
 <?php
 if(isset($_POST['update'])){
-  echo $msg;
+  echo "<script>alert( '$msg')</script>";
 }
 if(isset($_POST['delete-btn']))
 {
   $sql="DELETE FROM users WHERE username='$username'";
 if ($db->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo '<script>alert("Record deleted successfully")</script>';
   } else {
     echo "Error deleting record: " . $db->error;
   }
   echo '<script>window.location.href = "index.php";</script>';
 }
+
 ?>
 </div>
 </main>

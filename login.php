@@ -205,6 +205,5 @@ body{
   
 
 </main>
-</script>
 </body>
 </html>
