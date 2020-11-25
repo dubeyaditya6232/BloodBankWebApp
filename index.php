@@ -163,7 +163,7 @@ if ($result->num_rows > 0)
       echo '<p style="color:Red;">Blood Group Required: '.$row["reqbg"].'</p>';
       echo '<p style="color:Red;">Date of Requirement: '.$row["date"].'</p>';
       echo '<p>Mobile No. : '.$row["mobile"].'</p>';
-      echo '<p><a href="mailto:'.$row["Email"].'">E-mail : '.$row["Email"].'</p>';
+      echo '<p>E-mail : <a href="mailto:'.$row["Email"].'">'.$row["Email"].'</p>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
