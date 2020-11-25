@@ -26,9 +26,16 @@ if(isset($_POST['register_btn']))
     $password2=$_POST['password2'];  
     $query = "SELECT * FROM users WHERE username = '$username'";
     $result=mysqli_query($db,$query);
+    
+    $mobilequery="SELECT * from users WHERE mobile = '$mno'";	
+    $mobileresult=$db->query($mobilequery);	
+
+    $emailquery="SELECT * from users WHERE Email = '$email'";	
+    $emailresult=$db->query($emailquery);
+    
+        /*-------------------- if username already exists -------------------*/
       if($result)
       {
-     
         if( mysqli_num_rows($result) > 0)
         {
                 
@@ -37,19 +44,35 @@ if(isset($_POST['register_btn']))
                 echo '</script>';
         }
         
-          else
+          /*---------------------------------------------------------------- */	
+          /*---------------- email ID already exists ----------------------*/
+          
+          
+        else if($emailresult->num_rows > 0)
+        {	
+                echo '<script language="javascript">';
+                echo 'alert("An Account already exist with this Email Address")';
+                echo '</script>';
+        }
+          
+          
+          /*---------------------------------------------------------------- */	
+          /*------------------mobile number already exists-------------------*/
+          
+          
+        else if($mobileresult->num_rows > 0)	
+        {	
+                echo '<script language="javascript">';
+                echo 'alert("An Account already exist with the Mobile Number")';
+                echo '</script>';
+        }
+          
+        else
           {
-            
-            if($password==$password2)
-            {           //Create User
                 $password=md5($password); //hash password before storing for security purposes
                 $sql="INSERT INTO users(name, city, gender, age, bgroup, username, password , mobile ,Email  ) 
                                  VALUES('$name','$city','$gender','$age','$bloodgrp','$username','$password','$mno','$email')"; 
-            }
-            else
-            {
-                $_SESSION['message']="The two password do not match";   
-            }
+    
           }
       }
 }
@@ -111,6 +134,9 @@ body{
   h1{
     font-size: 2rem;
   }
+  img{	
+    min-height:5rem;	
+  }
 } 
   </style>
 </head>
@@ -141,10 +167,13 @@ body{
     </div>
   </div>
 </nav>
-<img src= "img\reg.jpg" alt="REGISTRATION FORM" style="width:100% ;    margin: 0.3px 0px">
+<div class="container"style="padding:0;">	
+<img class ="img-responsive" src= "img\reg.jpg" alt="REGISTRATION FORM" >	
+</div>
  
 
 <main class="main-content">
+<br>
 <p class="text-center">Registering for this site is easy. Just fill the fields below,and well get a new account set up for free and in no time.</p>
 <br><br>
  
