@@ -204,14 +204,14 @@ if(isset($_POST['register_btn']))
            <td>City : </td>
            <td><input type="text" name="city" class="textInput" placeholder="Enter City Name" required></td>
      </tr>
-     <tr>
+     <!-- <tr>
            <td>Gender : </td>
            <td><input type="text" name="gender" class="textInput" placeholder="Enter Your Gender" required></td>
-     </tr>
-     <tr>
+     </tr> -->
+     <!-- <tr>
            <td>Age : </td>
            <td><input type="text" name="age" class="textInput" placeholder="Enter Your Age" required></td>
-     </tr>
+     </tr> -->
      <tr>
      <td><label for="bloodgroup" >Blood Group: </label></td>
      <td><select name="bgroup" required>

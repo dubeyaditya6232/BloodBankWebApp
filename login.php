@@ -83,11 +83,10 @@ if(isset($_POST['Adminlogin_btn']))
   <link rel="stylesheet" href="style.css">
   <style>
   body{
-  background: url('img\abg3.jpg');
+  /* background-image: url('abg3.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  background-color: #e6ffff;
+  background-attachment: fixed; */
+  background-color:#cceabb;
 } 
 .nav-tabs > li {
     float:none;
@@ -118,8 +117,8 @@ th ,td{
 }
   </style>
 </head>
+<!-- <body style = "background:url(img\abg3.jpg)"> -->
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <div class="navbar-header">

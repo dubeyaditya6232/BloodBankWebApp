@@ -114,8 +114,8 @@ img{
 <div>
   <p>Name : <?php echo $data['Name']?></p>
   <p>City : <?php echo $data['City']?></p>
-  <p>Gender : <?php echo $data['Gender']?></p>
-  <p>Age : <?php echo $data['Age']?></p>
+  <!-- <p>Gender : <?php echo $data['Gender']?></p>
+  <p>Age : <?php echo $data['Age']?></p> -->
   <p>Blood Group : <?php echo $data['bgroup']?></p>
   <p>User Type : <?php echo $data['usertype']?></p>
   <p>UserName : <?php echo $data['username']?></p>
