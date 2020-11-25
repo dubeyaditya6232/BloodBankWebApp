@@ -82,6 +82,13 @@ if(isset($_POST['Adminlogin_btn']))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
+  body{
+  background: url('img\abg3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-color: #e6ffff;
+} 
 .nav-tabs > li {
     float:none;
     display:inline-block;
@@ -102,13 +109,7 @@ table {
 th ,td{
   padding: 0.5rem;
 }
-body{
-  background-image: url('img\pngtree-public-welfare-blood-donation-volunteer-rescue-image_11578.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #e6ffff;
-} 
+
 
 @media only screen and (max-width: 600px) {
   h1{
