@@ -121,14 +121,15 @@ body{
   h1{
     font-size: 2rem;
   }
+  img{
+    min-height:5rem;
+  }
 } 
   </style>
 </head>
 <body>
 
-<div class="container">
 
-<br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <div class="navbar-header">
@@ -151,7 +152,10 @@ body{
     </div>
   </div>
 </nav>
-<img src= "img\reg.jpg" alt="REGISTRATION FORM" style="width:100% ;    margin: 0.3px 0px">
+
+<div class="container"style="padding:0;">
+<img class ="img-responsive" src= "img\reg.jpg" alt="REGISTRATION FORM" >
+</div>
  
 
 <main class="main-content">
@@ -254,7 +258,7 @@ if(isset($_POST['register_btn']))
 </div>
 
 </main>
-</div>
+
 
 </body>
 </html>

@@ -139,13 +139,28 @@ img{
      <option value="Recipient">Recipient</option>
   </select>
   </div>
-  <input type="submit" name="update" value="Update">
+  <input type="submit" name="update" class="btn btn-primary" value="Update">
+</form>
+<br>
+<p>Do you wish to delete your Account?</p>
+<form METHOD="POST">
+<input type="submit" name="delete-btn" class="btn btn-primary" Value="Delete Account">
 </form>
 <br>
 <br>
 <?php
 if(isset($_POST['update'])){
   echo $msg;
+}
+if(isset($_POST['delete-btn']))
+{
+  $sql="DELETE FROM users WHERE username='$username'";
+if ($db->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+  } else {
+    echo "Error deleting record: " . $db->error;
+  }
+  echo '<script>window.location.href = "index.php";</script>';
 }
 ?>
 </div>

@@ -12,7 +12,7 @@ $sql="DELETE FROM users WHERE ID='".$_GET['ID']."'";
 if ($db->query($sql) === TRUE) {
     echo "Record deleted successfully";
   } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Error deleting record: " . $db->error;
   }
   echo '<script>window.location.href = "blood-stock.php";</script>';
 ?>

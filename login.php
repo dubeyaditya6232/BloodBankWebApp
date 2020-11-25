@@ -80,7 +80,6 @@ if(isset($_POST['Adminlogin_btn']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
   <style>
 .nav-tabs > li {
     float:none;
@@ -141,9 +140,9 @@ body{
   </div>
 </nav>
 <div id="logo1"> 
-    <center><img src = "img/logo.jpg" alt = "RAKTIM" width = "50%"></center>
+    <center><img class="img-responsive" src = "img/logo.jpg" alt = "RAKTIM"></center>
 </div>
-
+<br>
 <main class="main-content" >
 <?php
     if(isset($_SESSION['message']))
@@ -153,7 +152,7 @@ body{
     }
 ?>
 <center>
-  <ul class="nav nav-tabs"  role="tablist" >
+  <ul class="nav nav-tabs "  role="tablist" >
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#UserLogin">User Login</a>
     </li>
@@ -206,6 +205,6 @@ body{
   
 
 </main>
-
+</script>
 </body>
 </html>
