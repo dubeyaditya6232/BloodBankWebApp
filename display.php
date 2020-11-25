@@ -100,8 +100,8 @@ if ($result->num_rows > 0)
     echo '<div class="card-block">';
       echo '<h4 class="card-title">Name : '.$row["Name"].'</h4>';
       echo '<p>City : '.$row["City"].'</p>';
-      echo '<p>Gender : '.$row["Gender"].'</p>';
-      echo '<p>Age : '.$row["Age"].'</p>';
+      // echo '<p>Gender : '.$row["Gender"].'</p>';
+      // echo '<p>Age : '.$row["Age"].'</p>';
       echo '<p>Blood Group : '.$row["bgroup"].'</p>';
       echo '<p>Mobile No. : '.$row["mobile"].'</p>';
       echo '<p>E-mail : '.$row["Email"].'</p>';

@@ -18,7 +18,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-body {
+body {background-color: #cceabb;
   font-family: "Lato", sans-serif;
 }
 .card {
@@ -30,7 +30,7 @@ body {
   min-height:20rem;
 }
 body{
-  background-color: #e6ffff;
+  background-color: #cceabb;
 }
 @media only screen and (max-width: 600px) {
   h1{

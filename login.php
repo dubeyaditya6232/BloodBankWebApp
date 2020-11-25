@@ -81,6 +81,12 @@ if(isset($_POST['Adminlogin_btn']))
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  body{
+  /* background-image: url('abg3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  background-color:#cceabb;
+} 
 .nav-tabs > li {
     float:none;
     display:inline-block;
@@ -92,7 +98,7 @@ if(isset($_POST['Adminlogin_btn']))
 }
 #logo1 img
 {    
-    height: 50px;
+    width:25%;
     
 }
 table { 
@@ -101,9 +107,7 @@ table {
 th ,td{
   padding: 0.5rem;
 }
-body{
-  background-color: #e6ffff;
-} 
+
 
 @media only screen and (max-width: 600px) {
   h1{
@@ -112,8 +116,8 @@ body{
 }
   </style>
 </head>
+<!-- <body style = "background:url(img\abg3.jpg)"> -->
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <div class="navbar-header">

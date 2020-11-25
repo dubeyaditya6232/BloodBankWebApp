@@ -29,7 +29,10 @@ include('../connect.php');
   padding:5rem;
 }
 body{
-  background-color:#e6ffff;
+  /* background-image: url ("img\abg3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  background-color:#cceabb;
 }
 @media only screen and (max-width: 600px) {
 .col-md-6 a{
@@ -41,7 +44,7 @@ body{
 }
 </style>
 <body>
-
+<div style="background-size: 100%; background-color: #cceabb; background-image: url(img\abg3.jpg);">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
