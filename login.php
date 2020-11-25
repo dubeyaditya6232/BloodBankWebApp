@@ -93,7 +93,7 @@ if(isset($_POST['Adminlogin_btn']))
 }
 #logo1 img
 {    
-    height: 50px;
+    width:25%;
     
 }
 table { 
@@ -103,6 +103,10 @@ th ,td{
   padding: 0.5rem;
 }
 body{
+  background-image: url('img\pngtree-public-welfare-blood-donation-volunteer-rescue-image_11578.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   background-color: #e6ffff;
 } 
 
@@ -206,6 +210,5 @@ body{
   
 
 </main>
-
 </body>
 </html>
