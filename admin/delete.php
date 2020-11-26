@@ -14,5 +14,5 @@ if ($db->query($sql) === TRUE) {
   } else {
     echo "Error deleting record: " . $db->error;
   }
-  echo '<script>window.location.href = "blood-stock.php";</script>';
+  echo '<script>window.location.href = "users-list.php";</script>';
 ?>
