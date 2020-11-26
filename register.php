@@ -10,7 +10,6 @@ if(  isset($_SESSION['username']) )
  echo '<script type="text/javascript">alert("You  are already Logged IN");
  window.location.href = "login.php";
 </script>';
-
 }
 
 if(isset($_POST['register_btn']))
@@ -24,58 +23,73 @@ if(isset($_POST['register_btn']))
     $mno=$_POST['mno'];
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $password2=$_POST['password2'];
-
-    $mobilequery="SELECT * from users WHERE mobile = '$mno'";
-    $mobileresult=$db->query($mobilequery);
-
-    $emailquery="SELECT * from users WHERE Email = '$email'";
-    $emailresult=$db->query($emailquery);
-
+    $password2=$_POST['password2'];  
     $query = "SELECT * FROM users WHERE username = '$username'";
     $result=mysqli_query($db,$query);
+    
+    $mobilequery="SELECT * from users WHERE mobile = '$mno'";	
+    $mobileresult=$db->query($mobilequery);	
 
-/*---------------- email ID already exists ----------------------*/
-
-    if($emailresult->num_rows > 0)
-    {
-      $emailmsg="An Account already exist with the Email Address";
-    }
-/*---------------------------------------------------------------- */
-/*------------------mobile number already exists-------------------*/
-
-    else if($mobileresult->num_rows > 0)
-    {
-      $mobilemsg="An Account already exist with the Mobile Number";
-    }
-/*------------------------------------------------------------------ */ 
-
-/*-------------------- if username already exists -------------------*/
-     else if( mysqli_num_rows($result) > 0)
+    $emailquery="SELECT * from users WHERE Email = '$email'";	
+    $emailresult=$db->query($emailquery);
+    
+        /*-------------------- if username already exists -------------------*/
+      if($result)
+      {
+        if( mysqli_num_rows($result) > 0)
         {
                 
                 echo '<script language="javascript">';
                 echo 'alert("Username already exists")';
                 echo '</script>';
         }
-/*------------------------------------------------------------------ */ 
-          else
+        
+          /*---------------------------------------------------------------- */	
+          /*---------------- email ID already exists ----------------------*/
+          
+          
+        else if($emailresult->num_rows > 0)
+        {	
+                echo '<script language="javascript">';
+                echo 'alert("An Account already exist with this Email Address")';
+                echo '</script>';
+        }
+          
+          
+          /*---------------------------------------------------------------- */	
+          /*------------------mobile number already exists-------------------*/
+          
+          
+        else if($mobileresult->num_rows > 0)	
+        {	
+                echo '<script language="javascript">';
+                echo 'alert("An Account already exist with the Mobile Number")';
+                echo '</script>';
+        }
+          
+        else
           {
-            
-            if($password==$password2)
-            {           //Create User
                 $password=md5($password); //hash password before storing for security purposes
                 $sql="INSERT INTO users(name, city, gender, age, bgroup, username, password , mobile ,Email  ) 
                                  VALUES('$name','$city','$gender','$age','$bloodgrp','$username','$password','$mno','$email')"; 
-            }
-            else
-            {
-                $_SESSION['message']="The two password do not match";   
-            }
+    
           }
+      }
+}
+if(isset($_POST['otp_btn']))
+{
+    $password=$_POST['password'];
+    $password2=$_POST['password2'];  
+    if($password==$password2){
+        echo '<script language="javascript">';
+        echo 'send_otp()';
+        echo '</script>';
+    }
+    else{
+        $_SESSION['message']="The passwords do not match";   
+    }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +100,6 @@ if(isset($_POST['register_btn']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
   <style>
   #error_msg
 {
@@ -121,15 +134,17 @@ body{
   h1{
     font-size: 2rem;
   }
-  img{
-    min-height:5rem;
+  img{	
+    min-height:5rem;	
   }
 } 
   </style>
 </head>
 <body>
 
+<div class="container">
 
+<br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <div class="navbar-header">
@@ -152,54 +167,32 @@ body{
     </div>
   </div>
 </nav>
-
-<div class="container"style="padding:0;">
-<img class ="img-responsive" src= "img\reg.jpg" alt="REGISTRATION FORM" >
+<div class="container"style="padding:0;">	
+<img class ="img-responsive" src= "img\reg.jpg" alt="REGISTRATION FORM" >	
 </div>
  
 
 <main class="main-content">
 <br>
 <p class="text-center">Registering for this site is easy. Just fill the fields below,and well get a new account set up for free and in no time.</p>
-<br>
+<br><br>
  
-
 <?php
 if(isset($_POST['register_btn']))
 {
-  /*-----------------=--- Email Address already Exists----------------------*/
-  if($emailresult->num_rows > 0)
-  {
-    echo '<p class="text-center bg-danger">'.$emailmsg.'</p>';
-  }
-/*--------------------------------------------------------------------------*/
-
-/* --------------------Mobile No. Address already Exists--------------------*/
-  else if($mobileresult->num_rows > 0)
-  {
-    echo '<p class="text-center bg-danger">'.$mobilemsg.'</p>';
-  }
-/* --------------------------------------------------------------------------*/
-
-  /* -----------------Every thing is fine registering user -------------------*/
-  else if( mysqli_num_rows($result) < 1)
-  {
    if($db->query($sql)===TRUE)
      {
-       echo '<p style="text-align:center;color:red">USER Registered Successfully</p>';
        echo '<p style="text-align:center;">proceed to  <a href="login.php">LogIn</a></p>';
       }
     else{
        echo "error: ".$sql."<br>".$db->error;
       }
-    }
-  /* -------------------------------------------------------------------------- */
-  }
+}
 ?>
 <div>
 <center>
 <p>All fields are mandatory</p>
-  <form method="post" action="register.php">
+  <form method="post">
   <table>
      <tr>
            <td>Name : </td>
@@ -207,13 +200,13 @@ if(isset($_POST['register_btn']))
      </tr>
      <tr>
            <td>City : </td>
-           <td><input type="text" name="city" class="textInput" placeholder="Enter City Name" required></td>
+           <td><input type="text" name="city" class="textInput" placeholder="Enter City" required></td>
      </tr>
-      <tr>
+     <tr>
            <td>Gender : </td>
            <td><input type="text" name="gender" class="textInput" placeholder="Enter Your Gender" required></td>
-     </tr> 
-      <tr>
+     </tr>
+     <tr>
            <td>Age : </td>
            <td><input type="text" name="age" class="textInput" placeholder="Enter Your Age" required></td>
      </tr>
@@ -240,7 +233,7 @@ if(isset($_POST['register_btn']))
      </tr>
      <tr>
            <td>Email : </td>
-           <td><input type="email" name="email" class="textInput" placeholder="Enter Your E-mail" required></td>
+           <td><input type="email" id="email" name="email" class="textInput" placeholder="Enter Your E-mail" required></td>
      </tr>
       <tr>
            <td>Password : </td>
@@ -248,19 +241,62 @@ if(isset($_POST['register_btn']))
      </tr>
       <tr>
            <td>Confirm Password : </td>
-           <td><input type="password" name="password2" class="textInput" placeholder="Enter Password Again"required></td>
+           <td><input type="password" name="password2" class="textInput" placeholder="Confirm Password"required></td>
      </tr>      
     </table>
     <br>
-    <input type="submit" name="register_btn" class="btn btn-success ">
+      <button type="button" name="otp_btn" class="btn btn-success " onclick="send_otp()">Send OTP</button>
+    <br><br>
+    <table>
+     <tr>
+         <td>Enter OTP : </td>
+           <td><input type="text" name="otp " class="textInput" placeholder="Enter OTP"></td>
+     </tr>
+    </table>
+    <br>
+    <input type="submit" name="register_btn" class="btn btn-success " onclick="submit_otp()">
 </form>
 </center>
 <div class="text-center">Already have an account? <a href="login.php">Sign In</a></div>
 </div>
-
 </main>
-
-
+</div>
+<script>
+    function send_otp(){
+        var email=jQuery('#email').val();
+        jQuery.ajax({
+            url: 'send_otp.php',
+            type: 'post',
+            data: 'email='+email,
+            success:function(result){
+                if(result=='Valid'){
+                    alert('An OTP has been sent to your entered email id');
+                }
+                if(result=='Invalid'){
+                    alert('Enter a valid email id');
+                }
+            }
+        });
+    }
+    
+    function submit_otp(){
+        var otp=jQuery('#otp').val();
+        jQuery.ajax({
+            url: 'check_otp.php',
+            type: 'post',
+            data: 'otp='+otp,
+            success:function(result){
+                if(result=='Valid'){
+                    alert('Registration Successful!');
+                }
+                if(result=='Invalid'){
+                    alert('Incorrect OTP!');
+                    window.location='register.php';
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>
 
