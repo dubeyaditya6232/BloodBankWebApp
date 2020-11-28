@@ -64,6 +64,7 @@ if (isset($_POST['register_btn'])) {
     $_SESSION['message'] = "The two Password do not match";
   } else {
     $otp = rand(111111, 999999);
+    echo '<script>show();</script>';
     $msg = "An OTP has been sent to your entered email";
     $mailHtml = "Your OTP Verification number is " . $otp;
     mysqli_query($db, "INSERT INTO otp_store(email, otp, username) VALUES('$email','$otp','$username')");
@@ -108,6 +109,9 @@ if (isset($_POST['otp_btn'])) {
     unset($_SESSION['password']);
     unset($_SESSION['name']);
   }
+  else{
+    echo '<script>alert("Invalid OTP");</script>';
+  } 
 }
 
   function smtp_mailer($to, $subject, $msg)
@@ -122,9 +126,9 @@ if (isset($_POST['otp_btn'])) {
     $mail->Port = 587;
     $mail->IsHTML(true);
     $mail->CharSet = 'UTF-8';
-    $mail->Username = "apikey";
+    $mail->Username = "";
     $mail->Password = "";
-    $mail->SetFrom("bbms.bitmesra@gmail.com");
+    $mail->SetFrom("fakeforapps0001@gmail.com");
     $mail->Subject = $subject;
     $mail->Body = $msg;
     $mail->AddAddress($to);
@@ -181,7 +185,9 @@ if (isset($_POST['otp_btn'])) {
     .nav-tabs {
       text-align: center;
     }
-
+    /*#hide{
+      display:none;
+    }*/
     .message {
       color: red;
     }
@@ -287,7 +293,7 @@ if (isset($_POST['otp_btn'])) {
             </tr>
           </table>
           <br>
-          <button type="submit" name="register_btn" class="btn btn-success " onclick="show()">Send OTP</button>
+          <button type="submit" name="register_btn" class="btn btn-success " >Send OTP</button>
   </form>
           <br>
           <div class="message">

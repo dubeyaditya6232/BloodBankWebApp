@@ -19,7 +19,7 @@
 
 <body>
 <div class="footer2">
-    <img src ="img\searchd.jpg" alt ="DON'T LOSE HOPE" style = "width:100%; height:160px";>
+    <img src ="img/searchd.jpg" alt ="DON'T LOSE HOPE" style = "width:100%; height:160px";>
   </div> 
   
 </body>
