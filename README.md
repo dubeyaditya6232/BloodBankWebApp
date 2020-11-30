@@ -41,4 +41,6 @@ In admin folder added:
 
 ## week 4 -task
 
-Will be updated the following sunday(29/11/2020).
+Added Email OTP authentication while Registering for new Account.
+
+Added forgot password to set new Password.
