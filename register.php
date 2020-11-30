@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('connect.php');
+error_reporting(0);
 if (isset($_SESSION['username'])) {
   echo '<script type="text/javascript">alert("You  are already Logged IN");
  window.location.href = "login.php";
@@ -126,7 +127,7 @@ if (isset($_POST['otp_btn'])) {
     $mail->Port = 587;
     $mail->IsHTML(true);
     $mail->CharSet = 'UTF-8';
-    $mail->Username = "";
+    $mail->Username = "apikey";
     $mail->Password = "";
     $mail->SetFrom("fakeforapps0001@gmail.com");
     $mail->Subject = $subject;
@@ -306,7 +307,7 @@ if (isset($_POST['otp_btn'])) {
             <table>
               <tr>
                 <td>Enter OTP : </td>
-                <td><input type="text" id="otp" name="otp" class="textInput" placeholder="Enter OTP"></td>
+                <td><input type="text" id="otp" name="otp" class="textInput" placeholder="Enter OTP" required></td>
               </tr>
             </table>
             <br>

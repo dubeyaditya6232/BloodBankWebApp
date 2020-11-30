@@ -190,24 +190,10 @@ if (isset($_POST['Adminlogin_btn'])) {
             <input type="Submit" name="login_btn" class="btn btn-success" value="Sign in">
           </form>
 
-          <!-- forgot password
-        <form method="POST">
-            <table>
-              <tr>
-                <td>Enter OTP : </td>
-                <td><input type="text" id="otp" name="otp" class="textInput" placeholder="Enter OTP"></td>
-              </tr>
-            </table>
-            <br>
-            <input type="submit" value="Register" name="otp_btn" class="btn btn-success ">
-            
-        </form>
-      -->
-
           <br>
           <div style="color:black;">Do not have an account? <a type="submit" class="btn btn-danger" href="register.php">Sign up</a></div>
           <br>
-          <!--<span >Forgot Password</span>-->
+          <div style="color:black;"> <a type="submit" class="btn btn-danger" href="forgotpass.php">forgot Password?</a></div>
         </div>
         <div id="AdminLogin" class="container tab-pane fade" role="tabpanel" aria-labelledby="AdminLogin-tab">
           <form method="post" action="login.php">
