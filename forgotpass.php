@@ -190,6 +190,7 @@ function smtp_mailer($to, $subject, $msg)
       </div>
     </div>
   </nav>
+  <br>
   <div id="logo1">
     <center><img class="img-responsive" src="img/logo.jpg" alt="RAKTIM"></center>
   </div>
@@ -203,7 +204,7 @@ function smtp_mailer($to, $subject, $msg)
     ?>
     <center>
         <div class="tab-content">
-        <div id="UserLogin" class="container tab-pane  active " role="tabpanel" aria-labelledby="UserLogin-tab">
+        <div id="UserLogin" class="container tab-pane  active " role="tabpanel" aria-labelledby="ForgotPass-tab">
           <form method="post">
             <h2> Forgot Password </h2>
             <hr style="border: 1px solid black;">
@@ -212,7 +213,7 @@ function smtp_mailer($to, $subject, $msg)
                 <font color="red"><b> Enter Username : </b></font>
               </span><br>
             </div>
-            <div class="form-group first_box">
+            <div class="form-group">
               <input type="text" name="username" class="textInput form-control" required>
               <br>
             <button name="sendOTP_btn" class="btn btn-success">Continue</button>
