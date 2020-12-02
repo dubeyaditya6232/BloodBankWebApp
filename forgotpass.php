@@ -16,11 +16,13 @@ if (isset($_POST['sendOTP_btn'])) {
       if (mysqli_num_rows($result) > 0) {
         $otp = rand(111111, 999999);
         echo '<script>alert("OTP sent to registered Email address");</script>';
+        //echo '<script>window.stop()</script>';
         $msg = "An OTP has been sent to your entered email";
         $mailHtml = "Your OTP Verification number is " . $otp;
         mysqli_query($db, "INSERT INTO forgot_pass(email, otp, username) VALUES('$email','$otp','$username')");
           
         smtp_mailer($email,'Forgot password OTP',$mailHtml);
+        echo '<script>window.location.href = "enter-otp.php";</script>';
         ?>
     <!--<script>
             jQuery('.second_box').show();
@@ -33,8 +35,10 @@ if (isset($_POST['sendOTP_btn'])) {
     }
   }
 
-if (isset($_POST['checkOTP_btn'])) {
+/*if (isset($_POST['checkOTP_btn'])) {
   $entered_otp = mysqli_real_escape_string($db, $_POST['otp']);
+  $_SESSION['enteredOTP']=$entered_otp;
+  echo '<script>window.location.href = "enter-otp.php";</script>';
   $username = $_SESSION['user'];
   $email = $_SESSION['email'];
   $res = mysqli_query($db, "SELECT * from forgot_pass where email = '$email' and otp = '$entered_otp'");
@@ -48,11 +52,13 @@ if (isset($_POST['checkOTP_btn'])) {
   } else {
     echo '<script>alert("Invalid OTP");</script>';
     }
-}
+}*/
 
-if (isset($_POST['continue_btn'])) {
+/*if (isset($_POST['continue_btn'])) {
   $pwd = mysqli_real_escape_string($db, $_POST['new_pass']);
   $cpwd = mysqli_real_escape_string($db, $_POST['confirm_pass']);
+  $_SESSION['pwd']=$pwd;
+  $_SESSION['cpwd']=$cpwd;
   $email = $_SESSION['email'];
   if($pwd == $cpwd){
       $pwd=md5($pwd);
@@ -63,7 +69,7 @@ if (isset($_POST['continue_btn'])) {
   } else {
     echo '<script>alert("two Passwords do not  match");</script>';
     }
-}
+}*/
 
 function smtp_mailer($to, $subject, $msg)
   {
@@ -212,17 +218,17 @@ function smtp_mailer($to, $subject, $msg)
             <button name="sendOTP_btn" class="btn btn-success">Continue</button>
             </div>
           </form>
-          <form method="POST">
+          <!--<form method="POST">
             <div class="form-group second_box">
               <span>
                 <font color="red"><b> Enter OTP : </b></font>
               </span><br>
               <input type="text" name="otp" class="textInput form-control" required>
               <br>
-              <button name="checkOTP_btn" class="btn btn-success">Continue</button>
+              <button  name="checkOTP_btn" class="btn btn-success">Continue</button>
             </div>
-          </form>
-          <form method="POST">
+          </form>-->
+          <!--<form method="POST">
             <div class="form-group third_box">
               <span>
                 <font color="red"><b> Enter New Password : </b></font>
@@ -236,7 +242,7 @@ function smtp_mailer($to, $subject, $msg)
             <br>
             <button name="continue_btn" class="btn btn-success">Continue to Login</button>
             </div>
-          </form>
+          </form>-->
             </div>
         </div>
     </center>
