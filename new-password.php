@@ -33,14 +33,6 @@ if (isset($_POST['continue_btn'])) {
 
       background-color: #cceabb;
     }
-
-    /*.background{
-  background-image: url('img/abg3.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width:100%;
-  height:auto;
-}*/
       
     .nav-tabs {
       text-align: center;
