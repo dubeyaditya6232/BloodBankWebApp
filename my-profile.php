@@ -18,16 +18,21 @@ if (isset($_POST['update'])) {
   $fetchdate = date_create($fetchdate);
   $diff = date_diff($currentdate, $fetchdate);
   $diff2 = $diff->format("%a");
-  if ($diff2 > 90) {
+  $age = $row['Age'];
+  if ($age >=18 && $age<=65) {
+      if ($diff2 > 90) {
 
-    $query = "UPDATE users SET usertype='$usertype' WHERE username = '$username'";
-    if ($db->query($query) === true) {
-      $msg = "User Type updated successfully !";
+        $query = "UPDATE users SET usertype='$usertype' WHERE username = '$username'";
+        if ($db->query($query) === true) {
+          $msg = "User Type updated successfully !";
+        } else {
+          $msg = "Error updating the Record :" . $db->error;
+        }
+      } else {
+        $msg = "You cannot donate blood twice within 90 days";
+      } 
     } else {
-      $msg = "Error updating the Record :" . $db->error;
-    }
-  } else {
-    $msg = "You cannot donate blood twice within 90 days";
+      $msg = "Only people between age 18 and 65 are eligible for Blood Donation";
   }
 }
 $qry = mysqli_query($db, "select * from users where username='$username'"); // select query
