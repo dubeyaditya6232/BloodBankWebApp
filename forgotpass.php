@@ -11,9 +11,10 @@ if (isset($_POST['sendOTP_btn'])) {
     $temp = $result->fetch_assoc();
     $email = $temp['Email'];
     $_SESSION['email']=$email;
-    if ($result) {
-
-      if (mysqli_num_rows($result) > 0) {
+    $sql2 = "SELECT * FROM users WHERE  username='$username' and Email='$email'";
+    $result2 = mysqli_query($db, $sql);
+    if ($result2) {
+      if (mysqli_num_rows($result2) > 0) {
         $otp = rand(111111, 999999);
         echo '<script>alert("OTP sent to registered Email address");</script>';
         //echo '<script>window.stop()</script>';
@@ -24,52 +25,12 @@ if (isset($_POST['sendOTP_btn'])) {
         smtp_mailer($email,'Forgot password OTP',$mailHtml);
         echo '<script>window.location.href = "enter-otp.php";</script>';
         ?>
-    <!--<script>
-            jQuery('.second_box').show();
-            jQuery('.first_box').hide();
-    </script>-->
   <?php
       } else {
         $_SESSION['message'] = "Incorrect Username";
       }
     }
   }
-
-/*if (isset($_POST['checkOTP_btn'])) {
-  $entered_otp = mysqli_real_escape_string($db, $_POST['otp']);
-  $_SESSION['enteredOTP']=$entered_otp;
-  echo '<script>window.location.href = "enter-otp.php";</script>';
-  $username = $_SESSION['user'];
-  $email = $_SESSION['email'];
-  $res = mysqli_query($db, "SELECT * from forgot_pass where email = '$email' and otp = '$entered_otp'");
-  if ($res->num_rows >0) {
-    mysqli_query($db, "DELETE FROM forgot_pass where email = '$email'");?>
-    <!--<script>
-            jQuery('.third_box').show();
-            jQuery('.second_box').hide();
-    </script>-->
-  <?php
-  } else {
-    echo '<script>alert("Invalid OTP");</script>';
-    }
-}*/
-
-/*if (isset($_POST['continue_btn'])) {
-  $pwd = mysqli_real_escape_string($db, $_POST['new_pass']);
-  $cpwd = mysqli_real_escape_string($db, $_POST['confirm_pass']);
-  $_SESSION['pwd']=$pwd;
-  $_SESSION['cpwd']=$cpwd;
-  $email = $_SESSION['email'];
-  if($pwd == $cpwd){
-      $pwd=md5($pwd);
-      mysqli_query($db, "UPDATE users SET password = '$pwd' where Email = '$email'");
-      echo '<script>alert("Password Reset Successfully");
-      window.location.href = "login.php";
-      </script>';
-  } else {
-    echo '<script>alert("two Passwords do not  match");</script>';
-    }
-}*/
 
 function smtp_mailer($to, $subject, $msg)
   {
@@ -112,14 +73,7 @@ function smtp_mailer($to, $subject, $msg)
 
       background-color: #cceabb;
     }
-
-    /*.background{
-  background-image: url('img/abg3.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width:100%;
-  height:auto;
-}*/
+      
     .nav-tabs>li {
       float: none;
       display: inline-block;

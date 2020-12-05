@@ -40,14 +40,6 @@ if (isset($_POST['back_btn'])) {
 
       background-color: #cceabb;
     }
-
-    /*.background{
-  background-image: url('img/abg3.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width:100%;
-  height:auto;
-}*/
       
     .nav-tabs {
       text-align: center;
@@ -106,7 +98,7 @@ if (isset($_POST['back_btn'])) {
                 <hr style="border: 1px solid black;">
                 <div class="form-group">
                 <span>
-                <font color="red"><b> *Your Username is <?php echo $_SESSION['user'] ?> </b></font>
+                <font color="red"><b> *Your registered email address is <?php echo $_SESSION['email'] ?> </b></font>
                 </span>
                 <br><br>    
                 <span>
