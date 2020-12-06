@@ -104,7 +104,7 @@ $result = $db->query($sql);
             echo '<p>Age : ' . $row["Age"] . '</p>';
             echo '<p>Blood Group : ' . $row["bgroup"] . '</p>';
             echo '<p>Mobile No. : ' . $row["mobile"] . '</p>';
-            echo '<p><a href="mailto:' . $row["Email"] . '">E-mail : ' . $row["Email"] . '</p>';
+            echo '<p><a href="mailto:' . $row["Email"] . '">E-mail : ' . $row["Email"] . '</a></p>';
             echo '</div>';
             echo '</div>';
             echo '</div>';

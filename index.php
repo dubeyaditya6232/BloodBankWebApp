@@ -165,7 +165,7 @@ $result = $db->query($sql);
             echo '<p style="color:Red;">Blood Group Required: ' . $row["reqbg"] . '</p>';
             echo '<p style="color:Red;">Date of Requirement: ' . $row["date"] . '</p>';
             echo '<p>Mobile No. : ' . $row["mobile"] . '</p>';
-            echo '<p>E-mail : <a href="mailto:' . $row["Email"] . '">' . $row["Email"] . '</p>';
+            echo '<p>E-mail : <a href="mailto:' . $row["Email"] . '">' . $row["Email"] . '</a></p>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
