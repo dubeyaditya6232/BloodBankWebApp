@@ -173,31 +173,6 @@ function smtp_mailer($to, $subject, $msg)
             <button name="sendOTP_btn" class="btn btn-success">Continue</button>
             </div>
           </form>
-          <!--<form method="POST">
-            <div class="form-group second_box">
-              <span>
-                <font color="red"><b> Enter OTP : </b></font>
-              </span><br>
-              <input type="text" name="otp" class="textInput form-control" required>
-              <br>
-              <button  name="checkOTP_btn" class="btn btn-success">Continue</button>
-            </div>
-          </form>-->
-          <!--<form method="POST">
-            <div class="form-group third_box">
-              <span>
-                <font color="red"><b> Enter New Password : </b></font>
-              </span>
-              <input type="password" name="new_pass" class="textInput form-control"  required>
-              <br>
-              <span>
-                <font color="red"><b> Enter New Password : </b></font>
-              </span>
-              <input type="password" name="confirm_pass" class="textInput form-control" required>
-            <br>
-            <button name="continue_btn" class="btn btn-success">Continue to Login</button>
-            </div>
-          </form>-->
             </div>
         </div>
     </center>

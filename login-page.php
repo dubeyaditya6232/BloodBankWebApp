@@ -57,37 +57,6 @@ if (isset($_POST['request_btn'])) {
   }
 }
 
-
-/*   if($Eyear>=$cyear)
-    {
-        if($Emonth>=$cmonth)
-        {
-            if($Eday>=$cday)
-            {
-                $sql="UPDATE users SET date='$date',reqbg='$reqbg' WHERE username = '$username' ";
-                if($db->query($sql)===true){
-                  //$Reqmsg="Request updated successfully !";
-                }
-                $query = "UPDATE users SET Request='1' WHERE username = '$username'";
-                if($db->query($query)===true){
-                    $Reqmsg="Request updated successfully !";
-                }
-                else{
-                $Reqmsg="Error updating the Request :".$db->error;
-                }
-            }
-            else{
-                $Reqmsg="Enter Valid Date !!";
-            }
-        }
-        else{
-            $Reqmsg="Enter Valid Date !!";
-        }
-    }
-    else{
-        $Reqmsg="Enter Valid Date !!";
-    }
-}*/
 ?>
 
 <!DOCTYPE html>

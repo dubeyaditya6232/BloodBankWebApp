@@ -21,16 +21,16 @@ if (isset($_POST['register_btn'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
   $password2 = $_POST['password2'];
-  
-  $_SESSION['email']=$email;
-  $_SESSION['name']=$name;
-  $_SESSION['city']=$city;
-  $_SESSION['gender']=$gender;
-  $_SESSION['age']=$age;
-  $_SESSION['bgrp']=$bloodgrp;
-  $_SESSION['uname']=$username;
-  $_SESSION['mno']=$mno;
-  $_SESSION['password']=$password;
+
+  $_SESSION['email'] = $email;
+  $_SESSION['name'] = $name;
+  $_SESSION['city'] = $city;
+  $_SESSION['gender'] = $gender;
+  $_SESSION['age'] = $age;
+  $_SESSION['bgrp'] = $bloodgrp;
+  $_SESSION['uname'] = $username;
+  $_SESSION['mno'] = $mno;
+  $_SESSION['password'] = $password;
 
   $mobilequery = "SELECT * from users WHERE mobile = '$mno'";
   $mobileresult = $db->query($mobilequery);
@@ -47,21 +47,15 @@ if (isset($_POST['register_btn'])) {
     $msg = "An Account already exist with the Email Address";
   }
   /*---------------------------------------------------------------- */
-  /*------------------mobile number already exists-------------------*/ 
-
-  else if ($mobileresult->num_rows > 0) {
+  /*------------------mobile number already exists-------------------*/ else if ($mobileresult->num_rows > 0) {
     $msg = "An Account already exist with the Mobile Number";
   }
   /*------------------------------------------------------------------ */
 
-  /*-------------------- if username already exists -------------------*/ 
-
-  else if (mysqli_num_rows($result) > 0) {
+  /*-------------------- if username already exists -------------------*/ else if (mysqli_num_rows($result) > 0) {
     $msg = "An Account already exist with the Username";
   }
-  /*------------------------------------------------------------------ */ 
-
-  else if ($password != $password2) {
+  /*------------------------------------------------------------------ */ else if ($password != $password2) {
     $_SESSION['message'] = "The two Password do not match";
   } else {
     $otp = rand(111111, 999999);
@@ -70,22 +64,21 @@ if (isset($_POST['register_btn'])) {
     $mailHtml = "Your OTP Verification number is " . $otp;
     mysqli_query($db, "INSERT INTO otp_store(email, otp, username) VALUES('$email','$otp','$username')");
 
-    smtp_mailer($email,'Account Verification',$mailHtml);
-       
+    smtp_mailer($email, 'Account Verification', $mailHtml);
   }
 }
 if (isset($_POST['otp_btn'])) {
   /*echo "Register button working properly";*/
   $entered_otp = $_POST['otp'];
-  $email=$_SESSION['email'];
-  $name=$_SESSION['name'];
-  $city=$_SESSION['city'];
-  $gender=$_SESSION['gender'];
-  $age=$_SESSION['age'];
-  $bloodgrp=$_SESSION['bgrp'];
-  $username=$_SESSION['uname'];
-  $mno=$_SESSION['mno'];
-  $password=$_SESSION['password'];
+  $email = $_SESSION['email'];
+  $name = $_SESSION['name'];
+  $city = $_SESSION['city'];
+  $gender = $_SESSION['gender'];
+  $age = $_SESSION['age'];
+  $bloodgrp = $_SESSION['bgrp'];
+  $username = $_SESSION['uname'];
+  $mno = $_SESSION['mno'];
+  $password = $_SESSION['password'];
   $res = mysqli_query($db, "SELECT * from otp_store where email = '$email' and otp = '$entered_otp'");
   $count = mysqli_num_rows($res);
   if ($count > 0) {
@@ -93,13 +86,11 @@ if (isset($_POST['otp_btn'])) {
     $password = md5($password); //hash password before storing for security purposes
     $sql = "INSERT INTO users(name, city, gender, age, bgroup, username, password , mobile ,Email  ) 
                            VALUES('$name','$city','$gender','$age','$bloodgrp','$username','$password','$mno','$email')";
-                           if($db->query($sql)==true)
-                           {
-                             $regmsg="Registration successfull";
-                           }
-                           else{
-                             $regmsg= "error".$db->error;
-                           }
+    if ($db->query($sql) == true) {
+      $regmsg = "Registration successfull";
+    } else {
+      $regmsg = "error" . $db->error;
+    }
     unset($_SESSION['uname']);
     unset($_SESSION['email']);
     unset($_SESSION['city']);
@@ -109,36 +100,35 @@ if (isset($_POST['otp_btn'])) {
     unset($_SESSION['mno']);
     unset($_SESSION['password']);
     unset($_SESSION['name']);
-  }
-  else{
+  } else {
     echo '<script>alert("Invalid OTP");</script>';
-  } 
+  }
 }
 
-  function smtp_mailer($to, $subject, $msg)
-  {
-    require_once("smtp/class.phpmailer.php");
-    $mail = new PHPMailer();
-    $mail->IsSMTP();
-    $mail->SMTPDebug = 1;
-    $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'TLS';
-    $mail->Host = "smtp.sendgrid.com";
-    $mail->Port = 587;
-    $mail->IsHTML(true);
-    $mail->CharSet = 'UTF-8';
-    $mail->Username = "apikey";
-    $mail->Password = "";
-    $mail->SetFrom("fakeforapps0001@gmail.com");
-    $mail->Subject = $subject;
-    $mail->Body = $msg;
-    $mail->AddAddress($to);
-    if (!$mail->Send()) {
-      return 0;
-    } else {
-      return 1;
-    }
+function smtp_mailer($to, $subject, $msg)
+{
+  require_once("smtp/class.phpmailer.php");
+  $mail = new PHPMailer();
+  $mail->IsSMTP();
+  $mail->SMTPDebug = 1;
+  $mail->SMTPAuth = true;
+  $mail->SMTPSecure = 'TLS';
+  $mail->Host = "smtp.sendgrid.com";
+  $mail->Port = 587;
+  $mail->IsHTML(true);
+  $mail->CharSet = 'UTF-8';
+  $mail->Username = "apikey";
+  $mail->Password = "";
+  $mail->SetFrom("fakeforapps0001@gmail.com");
+  $mail->Subject = $subject;
+  $mail->Body = $msg;
+  $mail->AddAddress($to);
+  if (!$mail->Send()) {
+    return 0;
+  } else {
+    return 1;
   }
+}
 
 ?>
 
@@ -186,13 +176,14 @@ if (isset($_POST['otp_btn'])) {
     .nav-tabs {
       text-align: center;
     }
+
     /*#hide{
       display:none;
     }*/
     .message {
       color: red;
     }
-    
+
     @media only screen and (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -218,7 +209,7 @@ if (isset($_POST['otp_btn'])) {
         <!--<P class="navbar-brand">Menu</P>-->
         <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
         </ul>
@@ -294,16 +285,16 @@ if (isset($_POST['otp_btn'])) {
             </tr>
           </table>
           <br>
-          <button type="submit" name="register_btn" class="btn btn-success " >Send OTP</button>
-  </form>
-          <br>
-          <div class="message">
-            <?php
-            echo $msg;
-            ?>
-            </div>
-            <div id="hide">
-              <form method="POST">
+          <button type="submit" name="register_btn" class="btn btn-success ">Send OTP</button>
+        </form>
+        <br>
+        <div class="message">
+          <?php
+          echo $msg;
+          ?>
+        </div>
+        <div id="hide">
+          <form method="POST">
             <table>
               <tr>
                 <td>Enter OTP : </td>
@@ -312,24 +303,23 @@ if (isset($_POST['otp_btn'])) {
             </table>
             <br>
             <input type="submit" value="Register" name="otp_btn" class="btn btn-success ">
-            
-        </form>
+
+          </form>
         </div>
         <div class="message">
-            <?php
-            echo $regmsg;
-            ?>
+          <?php
+          echo $regmsg;
+          ?>
         </div>
       </center>
       <div class="text-center">Already have an account? <a href="login.php">Sign In</a></div>
     </div>
   </main>
   <script>
-            function show(){
-              document.getElementById("hide").style.display="block";
-            }
-            
-          </script>
+    function show() {
+      document.getElementById("hide").style.display = "block";
+    }
+  </script>
 </body>
 
 </html>
