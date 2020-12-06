@@ -117,7 +117,7 @@ function smtp_mailer($to, $subject, $msg)
   $mail->Port = 587;
   $mail->IsHTML(true);
   $mail->CharSet = 'UTF-8';
-  $mail->Username = "apikey";
+  $mail->Username = "";
   $mail->Password = "";
   $mail->SetFrom("fakeforapps0001@gmail.com");
   $mail->Subject = $subject;
